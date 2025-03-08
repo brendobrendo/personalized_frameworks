@@ -10,7 +10,7 @@
 
 The Harvard Architecture is a computer architecture with physically separate storage for instructions (program) and data, unlike the Von Neumann architecture where both share the same memory. This separation allows for more efficient processing, especially in embedded systems.
 
-```text
+```markdown
 Use the Harvard Architecture framework to explain how **{{ INPUT COMPUTER DEVICE }}** operates by detailing its major components. This includes discussing any available microprocessors (such as CPU, GPU, ALU, or control unit) that may be part of the device. If some components are not publicly available or are unclear, provide your best guess on what those components may be based on the device’s intended function. Additionally, explain the device’s memory system, including RAM, ROM, SSD, Flash, Secure Memory Modules (such as HSM), or any other form of memory it might use. For devices without specific memory types, make an educated assumption based on the device’s design or usage.
 ```
 
