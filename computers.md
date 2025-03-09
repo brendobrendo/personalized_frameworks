@@ -26,13 +26,61 @@ Example Devices
 
 The **Open Systems Interconnection (OSI) model** is a conceptual framework used to understand and standardize how different networking protocols work together. The OSI model breaks down networking into seven layers:
 
-1. **Physical Layer**: Transmission of raw data over physical media.
-2. **Data Link Layer**: Error detection and correction in data transfer.
-3. **Network Layer**: Routing of data across different networks.
-4. **Transport Layer**: Reliable data transfer between devices.
-5. **Session Layer**: Establishing, maintaining, and terminating sessions.
-6. **Presentation Layer**: Data encoding and encryption.
-7. **Application Layer**: Interaction with software applications and network services.
+| OSI Layer | Description & Examples | Data Name |
+|-----------|------------------------|-----------|
+| **Layer 7 - Application** | Provides network services directly to applications. Handles high-level protocols like web browsing, email, and file transfer. | **Data** |
+| | **Examples:** HTTP, HTTPS, FTP, SMTP, IMAP, DNS | |
+| **Layer 6 - Presentation** | Translates data between application and network formats. Handles encryption, compression, and encoding. | **Data** |
+| | **Examples:** TLS/SSL, JPEG, MPEG, ASCII, Unicode | |
+| **Layer 5 - Session** | Manages and controls communication sessions between devices. Handles authentication, session restoration, and synchronization. | **Data** |
+| | **Examples:** TLS (session establishment), RPC, PPTP, NetBIOS | |
+| **Layer 4 - Transport** | Ensures reliable or fast delivery of data. Manages error correction, retransmission, and flow control. | **Segment (TCP)** / **Datagram (UDP)** |
+| | **Examples:** TCP (reliable, ordered), UDP (fast, no guarantee) | |
+| **Layer 3 - Network** | Handles logical addressing and routing of packets across networks. Uses IP addresses to determine the best path for delivery. | **Packet** |
+| | **Examples:** IP (IPv4, IPv6), ICMP (ping), OSPF, BGP | |
+| **Layer 2 - Data Link** | Manages data transfer between directly connected devices. Responsible for MAC addressing and error detection. | **Frame** |
+| | **Examples:** Ethernet, Wi-Fi (802.11), MAC addresses, VLANs | |
+| **Layer 1 - Physical** | Defines the physical transmission of raw data bits over network media (cables, fiber, wireless). | **Bits** |
+| | **Examples:** Ethernet cables, fiber optics, radio waves, electrical signals | |
+
+
+### **1. Layer 4 (Transport) is the First Layer That Truly Encapsulates Data**
+- **Upper layers (5-7) primarily reformat or structure data** but do not encapsulate it in a formal protocol header.
+- **Encapsulation begins at Layer 4 (Transport Layer)** when **TCP/UDP headers** are added, defining **ports, sequence numbers, and control flags**.
+
+### **2. Headers Up to Layer 4 Are Typically Unencrypted**
+- **Layer 3 (IP) and Layer 4 (TCP/UDP) headers remain visible** so that **routers and firewalls** can process and forward packets.
+- This means that **intermediate devices (routers, firewalls, ISPs, DPI systems)** can see:
+  - **Source & Destination IP addresses (Layer 3)**
+  - **TCP/UDP port numbers (Layer 4)**
+  - **Packet size, flags, and routing metadata**
+
+### **3. Layer 5 (Session) Does Not Typically Perform True Encapsulation**
+- The **Session Layer (Layer 5)** is responsible for **managing and maintaining connections** (e.g., TLS handshake, RPC sessions).
+- It does **not typically encapsulate data** with new headers like **TCP/UDP (Layer 4) or IP (Layer 3)**.
+- Some protocols (e.g., **TLS, SSH, PPTP**) span both **Session (Layer 5) and Presentation (Layer 6)**.
+
+### **4. Encryption Happens at Higher Layers (Usually Layer 6 & 7)**
+- **Application Layer (Layer 7)**: HTTPS, SSH, and email encryption occur here.
+- **Presentation Layer (Layer 6)**: Data can be **compressed, formatted, or encrypted** (e.g., TLS encryption).
+- **Session Layer (Layer 5)**: **Session management data (TLS handshake, authentication) can be encrypted**, but the transport headers (TCP/UDP) remain visible.
+
+### **5. Intermediate Devices Can Theoretically Read Unencrypted Headers**
+- Since **Layer 3 (IP) and Layer 4 (TCP/UDP) headers are not encrypted**, intermediate devices such as:
+  - **Routers** can read IP headers to forward packets.
+  - **Firewalls** can inspect packet headers and block traffic based on rules.
+  - **Deep Packet Inspection (DPI) systems** used by ISPs/governments can analyze traffic patterns.
+  - **Attackers performing MITM (Man-in-the-Middle) attacks** can see unencrypted metadata.
+
+### **6. VPNs and QUIC Encrypt More Than Traditional TLS**
+- **VPNs (WireGuard, OpenVPN, IPSec) encrypt Layer 3+**, hiding **original IP and transport headers**.
+- **QUIC (used in HTTP/3) encrypts more transport-layer metadata** than TCP/TLS, increasing privacy.
+
+### **7. Full Encryption of All Headers Would Break the Internet**
+- Some metadata **must** be visible for network routing:
+  - **IP headers (Layer 3)** are needed for packet delivery.
+  - **TCP/UDP headers (Layer 4)** allow proper traffic handling.
+- **Fully encrypting headers** would prevent routers and firewalls from processing traffic efficiently.
 
 ---
 
