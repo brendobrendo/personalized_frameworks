@@ -43,6 +43,10 @@ The **Open Systems Interconnection (OSI) model** is a conceptual framework used 
 | **Layer 1 - Physical** | Defines the physical transmission of raw data bits over network media (cables, fiber, wireless). | **Bits** |
 | | **Examples:** Ethernet cables, fiber optics, radio waves, electrical signals | |
 
+```text
+Write me the representation of the data frames for { HTTPS REQUEST / SENDING EMAIL / ETC. } in YAML format
+```
+
 ### Example Data Frame For an HTTP Represented in YAML
 ```yaml
 Ethernet_Frame:
@@ -175,10 +179,6 @@ Ethernet_Frame_Response:
 
   Trailer:
     Frame_Check_Sequence: "0xBEEFDEAD"
-```
-
-```text
-Write me the representation of the data frames for { HTTPS REQUEST / SENDING EMAIL / ETC. } in YAML format
 ```
 
 ### **Layer 4 (Transport) is the First Layer That Truly Encapsulates Data**
