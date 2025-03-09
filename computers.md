@@ -44,7 +44,9 @@ The **Open Systems Interconnection (OSI) model** is a conceptual framework used 
 | | **Examples:** Ethernet cables, fiber optics, radio waves, electrical signals | |
 
 ```text
-Write me the representation of the data frames for { HTTPS REQUEST / SENDING EMAIL / ETC. } in YAML format
+Generate a YAML representation of how data is transferred in the below computer interaction using the OSI Model. Each OSI layer should include relevant details about the data at that stage.
+
+### computer interaction ###
 ```
 
 ### Example Data Frame For an HTTP Represented in YAML
