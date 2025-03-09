@@ -43,6 +43,42 @@ The **Open Systems Interconnection (OSI) model** is a conceptual framework used 
 | **Layer 1 - Physical** | Defines the physical transmission of raw data bits over network media (cables, fiber, wireless). | **Bits** |
 | | **Examples:** Ethernet cables, fiber optics, radio waves, electrical signals | |
 
+### Example Data Frame Represented in YAML
+
+```yaml
+Ethernet_Frame:
+  Header:
+    Destination_MAC: "00:1A:2B:3C:4D:5E"
+    Source_MAC: "5E:4D:3C:2B:1A:00"
+    EtherType: "0x0800"
+  Payload:
+    IP_Packet:
+      Header:
+        Source_IP: "192.168.1.10"
+        Destination_IP: "8.8.8.8"
+        Protocol: "TCP"
+      Payload:
+        TCP_Segment:
+          Header:
+            Source_Port: 443
+            Destination_Port: 12345
+            Flags:
+              SYN: 1
+              ACK: 0
+          Payload:
+            Application_Data:
+              HTTP_Request:
+                Method: "GET"
+                Path: "/index.html"
+                Version: "HTTP/1.1"
+                Headers:
+                  Host: "example.com"
+                  User-Agent: "Mozilla/5.0"
+                  Accept: "text/html"
+                Note: "This payload might be encrypted if using HTTPS."
+  Trailer:
+    Frame_Check_Sequence: "0xDEADBEEF"
+```
 
 ### **1. Layer 4 (Transport) is the First Layer That Truly Encapsulates Data**
 - **Upper layers (5-7) primarily reformat or structure data** but do not encapsulate it in a formal protocol header.
