@@ -79,72 +79,137 @@ Ethernet_Frame:
     Frame_Check_Sequence: "0xDEADBEEF"
 ```
 
-### Example Data Frame For an HTTPS Represented in YAML
+### Example Data Frames For an HTTPS Represented in YAML
+#### 1️⃣ First Ethernet Frame - HTTPS Request from Client → Server
 ```yaml
-Ethernet_Frame:
+Ethernet_Frame_Request:
   Header:
-    Destination_MAC: "00:1A:2B:3C:4D:5E"
-    Source_MAC: "5E:4D:3C:2B:1A:00"
-    EtherType: "0x0800"
+    Destination_MAC: "00:1A:2B:3C:4D:5E"  # Server's MAC address
+    Source_MAC: "5E:4D:3C:2B:1A:00"  # Client's MAC address
+    EtherType: "0x0800"  # IPv4
+
   Payload:
     IP_Packet:
       Header:
+        Version: 4
+        IHL: 5
+        Total_Length: 60
         Source_IP: "192.168.1.10"
         Destination_IP: "8.8.8.8"
-        Protocol: "TCP"
+        Protocol: 6  # TCP
+        TTL: 64
       Payload:
         TCP_Segment:
           Header:
-            Source_Port: 443
-            Destination_Port: 12345
-            Flags:
-              SYN: 1
-              ACK: 0
+            Source_Port: 12345
+            Destination_Port: 443  # HTTPS Port
+            Sequence_Number: 1001
+            Acknowledgment_Number: 0
+            Flags: 0x02  # SYN (Starting handshake)
+            Window_Size: 65535
           Payload:
             TLS_Record:
-              Handshake:
-                Client_Hello: "..."  # Initial client message to negotiate TLS session
-                Server_Hello: "..."  # Server response with encryption settings
-                Certificate: "..."  # Server's SSL/TLS certificate
-                Key_Exchange: "..."  # Secure key exchange process
-              Encrypted_Application_Data: "3af45b7c9d8e4c..."  # This is the encrypted HTTP request
+              Type: "ApplicationData"
+              Encrypted_Data: "3af45b7c9d8e4c..."  # Encrypted HTTP Request
+              Decrypted_Payload:
+                HTTP_Request:
+                  Method: "GET"
+                  URL: "https://www.example.com"
+                  Headers:
+                    User-Agent: "Mozilla/5.0"
+                    Accept: "text/html"
+                    Host: "www.example.com"
+                  Body: ""
+
   Trailer:
     Frame_Check_Sequence: "0xDEADBEEF"
 ```
 
-### **1. Layer 4 (Transport) is the First Layer That Truly Encapsulates Data**
+#### 2️⃣ Second Ethernet Frame - HTTPS Response from Server → Client
+```yaml
+Ethernet_Frame_Response:
+  Header:
+    Destination_MAC: "5E:4D:3C:2B:1A:00"  # Client's MAC address
+    Source_MAC: "00:1A:2B:3C:4D:5E"  # Server's MAC address
+    EtherType: "0x0800"  # IPv4
+
+  Payload:
+    IP_Packet:
+      Header:
+        Version: 4
+        IHL: 5
+        Total_Length: 512
+        Source_IP: "8.8.8.8"
+        Destination_IP: "192.168.1.10"
+        Protocol: 6  # TCP
+        TTL: 64
+      Payload:
+        TCP_Segment:
+          Header:
+            Source_Port: 443  # HTTPS Port
+            Destination_Port: 12345
+            Sequence_Number: 2001
+            Acknowledgment_Number: 1002
+            Flags: 0x12  # SYN-ACK (Server acknowledges request)
+            Window_Size: 65535
+          Payload:
+            TLS_Record:
+              Type: "ApplicationData"
+              Encrypted_Data: "a9c7d3e8b4f2..."  # Encrypted HTTP Response
+              Decrypted_Payload:
+                HTTP_Response:
+                  Status: 200 OK
+                  Headers:
+                    Content-Type: "text/html"
+                    Content-Length: 49
+                  Body: |
+                    <!DOCTYPE html>
+                    <html>
+                      <head>
+                        <title>Hello World!</title>
+                      </head>
+                      <body>
+                        <h1>Hello World!</h1>
+                      </body>
+                    </html>
+
+  Trailer:
+    Frame_Check_Sequence: "0xBEEFDEAD"
+```
+
+### **Layer 4 (Transport) is the First Layer That Truly Encapsulates Data**
 - **Upper layers (5-7) primarily reformat or structure data** but do not encapsulate it in a formal protocol header.
 - **Encapsulation begins at Layer 4 (Transport Layer)** when **TCP/UDP headers** are added, defining **ports, sequence numbers, and control flags**.
 
-### **2. Headers Up to Layer 4 Are Typically Unencrypted**
+### **Headers Up to Layer 4 Are Typically Unencrypted**
 - **Layer 3 (IP) and Layer 4 (TCP/UDP) headers remain visible** so that **routers and firewalls** can process and forward packets.
 - This means that **intermediate devices (routers, firewalls, ISPs, DPI systems)** can see:
   - **Source & Destination IP addresses (Layer 3)**
   - **TCP/UDP port numbers (Layer 4)**
   - **Packet size, flags, and routing metadata**
 
-### **3. Layer 5 (Session) Does Not Typically Perform True Encapsulation**
+### **Layer 5 (Session) Does Not Typically Perform True Encapsulation**
 - The **Session Layer (Layer 5)** is responsible for **managing and maintaining connections** (e.g., TLS handshake, RPC sessions).
 - It does **not typically encapsulate data** with new headers like **TCP/UDP (Layer 4) or IP (Layer 3)**.
 - Some protocols (e.g., **TLS, SSH, PPTP**) span both **Session (Layer 5) and Presentation (Layer 6)**.
 
-### **4. Encryption Happens at Higher Layers (Usually Layer 6 & 7)**
+### **Encryption Happens at Higher Layers (Usually Layer 6 & 7)**
 - **Application Layer (Layer 7)**: HTTPS, SSH, and email encryption occur here.
 - **Presentation Layer (Layer 6)**: Data can be **compressed, formatted, or encrypted** (e.g., TLS encryption).
 - **Session Layer (Layer 5)**: **Session management data (TLS handshake, authentication) can be encrypted**, but the transport headers (TCP/UDP) remain visible.
 
-### **5. Intermediate Devices Can Theoretically Read Unencrypted Headers**
+### **Intermediate Devices Can Theoretically Read Unencrypted Headers**
 - Since **Layer 3 (IP) and Layer 4 (TCP/UDP) headers are not encrypted**, intermediate devices such as:
   - **Routers** can read IP headers to forward packets.
   - **Firewalls** can inspect packet headers and block traffic based on rules.
   - **Deep Packet Inspection (DPI) systems** used by ISPs/governments can analyze traffic patterns.
   - **Attackers performing MITM (Man-in-the-Middle) attacks** can see unencrypted metadata.
 
-### **6. VPNs and QUIC Encrypt More Than Traditional TLS**
+### **VPNs and QUIC Encrypt More Than Traditional TLS**
 - **VPNs (WireGuard, OpenVPN, IPSec) encrypt Layer 3+**, hiding **original IP and transport headers**.
 - **QUIC (used in HTTP/3) encrypts more transport-layer metadata** than TCP/TLS, increasing privacy.
 
-### **7. Full Encryption of All Headers Would Break the Internet**
+### **Full Encryption of All Headers Would Break the Internet**
 - Some metadata **must** be visible for network routing:
   - **IP headers (Layer 3)** are needed for packet delivery.
   - **TCP/UDP headers (Layer 4)** allow proper traffic handling.
