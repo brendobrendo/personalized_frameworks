@@ -43,8 +43,7 @@ The **Open Systems Interconnection (OSI) model** is a conceptual framework used 
 | **Layer 1 - Physical** | Defines the physical transmission of raw data bits over network media (cables, fiber, wireless). | **Bits** |
 | | **Examples:** Ethernet cables, fiber optics, radio waves, electrical signals | |
 
-### Example Data Frame Represented in YAML
-
+### Example Data Frame For an HTTP Represented in YAML
 ```yaml
 Ethernet_Frame:
   Header:
@@ -76,6 +75,39 @@ Ethernet_Frame:
                   User-Agent: "Mozilla/5.0"
                   Accept: "text/html"
                 Note: "This payload might be encrypted if using HTTPS."
+  Trailer:
+    Frame_Check_Sequence: "0xDEADBEEF"
+```
+
+### Example Data Frame For an HTTPS Represented in YAML
+```yaml
+Ethernet_Frame:
+  Header:
+    Destination_MAC: "00:1A:2B:3C:4D:5E"
+    Source_MAC: "5E:4D:3C:2B:1A:00"
+    EtherType: "0x0800"
+  Payload:
+    IP_Packet:
+      Header:
+        Source_IP: "192.168.1.10"
+        Destination_IP: "8.8.8.8"
+        Protocol: "TCP"
+      Payload:
+        TCP_Segment:
+          Header:
+            Source_Port: 443
+            Destination_Port: 12345
+            Flags:
+              SYN: 1
+              ACK: 0
+          Payload:
+            TLS_Record:
+              Handshake:
+                Client_Hello: "..."  # Initial client message to negotiate TLS session
+                Server_Hello: "..."  # Server response with encryption settings
+                Certificate: "..."  # Server's SSL/TLS certificate
+                Key_Exchange: "..."  # Secure key exchange process
+              Encrypted_Application_Data: "3af45b7c9d8e4c..."  # This is the encrypted HTTP request
   Trailer:
     Frame_Check_Sequence: "0xDEADBEEF"
 ```
