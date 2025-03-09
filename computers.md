@@ -177,6 +177,10 @@ Ethernet_Frame_Response:
     Frame_Check_Sequence: "0xBEEFDEAD"
 ```
 
+```text
+Write me the representation of the data frames for { HTTPS REQUEST / SENDING EMAIL / ETC. } in YAML format
+```
+
 ### **Layer 4 (Transport) is the First Layer That Truly Encapsulates Data**
 - **Upper layers (5-7) primarily reformat or structure data** but do not encapsulate it in a formal protocol header.
 - **Encapsulation begins at Layer 4 (Transport Layer)** when **TCP/UDP headers** are added, defining **ports, sequence numbers, and control flags**.
@@ -208,12 +212,6 @@ Ethernet_Frame_Response:
 ### **VPNs and QUIC Encrypt More Than Traditional TLS**
 - **VPNs (WireGuard, OpenVPN, IPSec) encrypt Layer 3+**, hiding **original IP and transport headers**.
 - **QUIC (used in HTTP/3) encrypts more transport-layer metadata** than TCP/TLS, increasing privacy.
-
-### **Full Encryption of All Headers Would Break the Internet**
-- Some metadata **must** be visible for network routing:
-  - **IP headers (Layer 3)** are needed for packet delivery.
-  - **TCP/UDP headers (Layer 4)** allow proper traffic handling.
-- **Fully encrypting headers** would prevent routers and firewalls from processing traffic efficiently.
 
 ---
 
