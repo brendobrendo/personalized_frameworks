@@ -293,4 +293,20 @@ This paradox highlights the challenges AI faces in mimicking human capabilities.
 
 ---
 
-Feel free to modify and expand upon each section based on your learning or project’s needs. This framework will act as a tool to deepen understanding and apply the concepts in practical scenarios.
+# Request for Technical Description of Salesforce CRV and Verifone MX900-01 Interaction
+
+Provide a detailed breakdown of how my **Salesforce CRV application** interacts with the **Verifone MX900-01 Pin Pad Device** when a customer **taps their debit card** to authenticate into CRV.
+
+## Frameworks to Use:
+
+### 1. Fetch-Decode-Execute Cycle:
+- Describe the processes performed by each machine during authentication, breaking them down into **fetch, decode, and execute** steps.
+
+### 2. Harvard Architecture Framework:
+- List the major components of each device (e.g., **CPUs, GPUs, HSMs, RAM, I/O devices**) and describe their roles in processing the authentication request.
+
+### 3. Message Exchange Representations:
+- Provide examples of **messages exchanged between the devices** in **YAML format**, following the **OSI Model** to describe how data flows across layers.
+
+**Ensure the explanation is detailed, structured, and technically precise, integrating all three frameworks into the interaction process.**
+
