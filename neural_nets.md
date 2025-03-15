@@ -39,6 +39,8 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 **Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
 `y = σ(WX + b),  σ(x) = 1 / (1 + e^(-x))`
 
+![Equation](https://latex.codecogs.com/png.latex?y%20%3D%20%5Csigma(WX%20%2B%20b)%2C%20%5Cquad%20%5Csigma(x)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-x%7D%7D)
+
 **Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
 
 ---
