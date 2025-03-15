@@ -37,7 +37,6 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 <code>X = [0.2, 0.5, 0.8, 0.1, 0.6]</code>
 
 **Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
-`y = σ(WX + b),  σ(x) = 1 / (1 + e^(-x))`
 
 ![Equation](https://latex.codecogs.com/png.latex?y%20%3D%20%5Csigma(WX%20%2B%20b)%2C%20%5Cquad%20%5Csigma(x)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-x%7D%7D)
 
