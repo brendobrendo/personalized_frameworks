@@ -28,7 +28,41 @@ During training mode, weights are updated using backpropagation to reduce the lo
 ## Functions
 
 ### Activation Functions
-Activation functions introduce non-linearities into the model, enabling it to learn complex patterns.
+Activation functions introduce non-linearities into the model, enabling it to learn complex patterns. Different activation functions serve different purposes and are used in specific layers of a neural network:
+
+#### **Types of Activation Functions and Their Uses**
+1. **ReLU (Rectified Linear Unit)**
+   - **Used in:** Most hidden layers of deep neural networks.
+   - **Why?** Efficient, prevents vanishing gradients, and allows deep networks to train faster.
+   - **Downside:** Can suffer from the "dying ReLU" problem (neurons stuck at zero output).
+
+2. **Leaky ReLU / Parametric ReLU**
+   - **Used in:** Hidden layers, especially in GANs and deep networks.
+   - **Why?** Addresses dying ReLU issue by allowing a small slope for negative inputs.
+
+3. **Sigmoid**
+   - **Used in:** Output layer for binary classification.
+   - **Why?** Outputs values between 0 and 1, making it useful for probability-based predictions.
+   - **Downside:** Can cause vanishing gradients in deep networks.
+
+4. **Tanh (Hyperbolic Tangent)**
+   - **Used in:** Some hidden layers (historically in RNNs).
+   - **Why?** Outputs between -1 and 1, making it useful for zero-centered data.
+   - **Downside:** Still suffers from vanishing gradients but is better than sigmoid.
+
+5. **Softmax**
+   - **Used in:** Output layer for multi-class classification.
+   - **Why?** Converts logits into probabilities that sum to 1.
+   - **Downside:** Can be sensitive to large input values, leading to numerical instability.
+
+6. **Linear (No Activation)**
+   - **Used in:** Output layer for regression tasks.
+   - **Why?** Allows the model to predict continuous values without constraints.
+
+#### **When Some Layers Do Not Use Activation Functions**
+- The **output layer of regression models** does not use an activation function to allow unrestricted predictions.
+- Sometimes, a **linear transformation layer** (such as the final layer before softmax) does not use activation functions to simplify computations.
+- Some architectures, like **residual networks (ResNets)**, may pass information directly through certain layers without activation to preserve gradients.
 
 ### Loss Functions
 Loss functions measure the discrepancy between predicted and actual outcomes, guiding optimization.
