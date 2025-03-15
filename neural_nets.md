@@ -45,6 +45,8 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 
 **Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
 
+![Sigmoid Behavior](https://latex.codecogs.com/png.latex?x%5Cto%5Cinfty)
+
 ---
 
 ### **2. Multi-Class Classification**
