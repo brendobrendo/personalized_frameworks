@@ -37,12 +37,9 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 <code>X = [0.2, 0.5, 0.8, 0.1, 0.6]</code>
 
 **Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
-<code>y = \sigma(WX + b), \quad \sigma(x) = \frac{1}{1 + e^{-x}}</code>
 `y = σ(WX + b),  σ(x) = 1 / (1 + e^(-x))`
 
 **Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
-
-**Interpretation:** If $y > 0.5$, classify as **spam (1)**; otherwise, classify as **not spam (0)**.
 
 ---
 
