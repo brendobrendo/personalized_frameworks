@@ -34,9 +34,7 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 ### **1. Binary Classification**
 **Example Task:** Determining if an email is spam (1) or not spam (0).  
 **Input Representation:** A feature vector representing email characteristics, such as word frequencies, sender reputation, and presence of specific phrases.  
-\[
-X = [0.2, 0.5, 0.8, 0.1, 0.6]
-\]
+<code>X = [0.2, 0.5, 0.8, 0.1, 0.6]</code>
 **Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
 \[
 y = \sigma(WX + b), \quad \sigma(x) = \frac{1}{1 + e^{-x}}
