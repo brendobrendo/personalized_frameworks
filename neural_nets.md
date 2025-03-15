@@ -25,6 +25,106 @@ During training mode, weights are updated using backpropagation to reduce the lo
 
 ---
 
+## **General Forward Pass Flow for Different Task Types in Neural Networks**
+
+Below is a step-by-step breakdown of the forward pass for different task types, including how the input and output vectors are represented and how they translate into meaningful predictions.
+
+---
+
+### **1. Binary Classification**
+**Example Task:** Determining if an email is spam (1) or not spam (0).  
+**Input Representation:** A feature vector representing email characteristics, such as word frequencies, sender reputation, and presence of specific phrases.  
+\[
+X = [0.2, 0.5, 0.8, 0.1, 0.6]
+\]
+**Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
+\[
+y = \sigma(WX + b), \quad \sigma(x) = \frac{1}{1 + e^{-x}}
+\]
+**Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
+
+---
+
+### **2. Multi-Class Classification**
+**Example Task:** Recognizing handwritten digits (0-9).  
+**Input Representation:** Flattened grayscale image pixels, where each value represents the intensity of a pixel.  
+\[
+X = [0, 0, 0.6, 0.8, 1, 0.5, 0, 0, 0]
+\]
+**Output Representation:** A probability distribution over all classes (0-9), where the sum of probabilities equals 1.  
+\[
+y = \text{softmax}(WX + b)
+\]
+\[
+y = [0.01, 0.02, 0.05, 0.70, 0.10, 0.02, 0.03, 0.03, 0.02, 0.02]
+\]
+**Interpretation:** The model predicts **the digit with the highest probability** (in this case, **3** with 70% confidence).
+
+---
+
+### **3. Multi-Label Classification**
+**Example Task:** Identifying multiple objects in an image (e.g., "dog" and "car" in the same image).  
+**Input Representation:** Feature vector representing image characteristics (extracted via convolutional layers).  
+\[
+X = [0.9, 0.3, 0.6, 0.1, 0.5, 0.2]
+\]
+**Output Representation:** Independent probabilities for each class, where multiple labels can be assigned.  
+\[
+y = \sigma(WX + b)
+\]
+\[
+y = [0.85, 0.02, 0.90, 0.10, 0.05]
+\]
+(If threshold \( > 0.5 \), label is predicted as present.)  
+**Interpretation:** The model detects **class 1 (dog) and class 3 (car)** since they exceed the threshold.
+
+---
+
+### **4. Regression Task with Unbounded Output**
+**Example Task:** Predicting house prices based on features like square footage, number of bedrooms, and location.  
+**Input Representation:**  
+\[
+X = [1500, 3, 2, 1, 5] \quad \text{(square feet, bedrooms, bathrooms, garage, neighborhood rating)}
+\]
+**Output Representation:** A continuous value with no constraints.  
+\[
+y = WX + b
+\]
+\[
+y = 420,000
+\]
+**Interpretation:** The model predicts a house price of **$420,000**.
+
+---
+
+### **5. Regression Task with Bounded Output**
+**Example Task:** Predicting customer satisfaction score (0 to 1).  
+**Input Representation:**  
+\[
+X = [0.6, 0.3, 0.9, 0.4] \quad \text{(customer review sentiment scores, response time, etc.)}
+\]
+**Output Representation:** A single continuous value constrained to a range using a **sigmoid activation function**.  
+\[
+y = \sigma(WX + b)
+\]
+\[
+y = 0.78
+\]
+**Interpretation:** The predicted satisfaction score is **78%**.
+
+---
+
+### **Summary Table**
+| Task Type | Input Vector Example | Output Activation | Output Vector Example | Interpretation |
+|-----------|----------------------|-------------------|----------------------|---------------|
+| **Binary Classification** | `[0.2, 0.5, 0.8, 0.1, 0.6]` | Sigmoid | `[0.87]` | Classifies as spam (1) if \( y > 0.5 \) |
+| **Multi-Class Classification** | `[0, 0, 0.6, 0.8, 1, 0.5, 0, 0, 0]` | Softmax | `[0.01, 0.02, 0.05, 0.70, 0.10, 0.02, 0.03, 0.03, 0.02, 0.02]` | Predicts the digit 3 |
+| **Multi-Label Classification** | `[0.9, 0.3, 0.6, 0.1, 0.5, 0.2]` | Sigmoid | `[0.85, 0.02, 0.90, 0.10, 0.05]` | Detects multiple objects: Dog (1) and Car (3) |
+| **Regression (Unbounded)** | `[1500, 3, 2, 1, 5]` | None (Linear) | `[420000]` | Predicts house price: **$420K** |
+| **Regression (Bounded)** | `[0.6, 0.3, 0.9, 0.4]` | Sigmoid | `[0.78]` | Predicts customer satisfaction: **78%** |
+
+---
+
 ## Functions
 
 ### Activation Functions
