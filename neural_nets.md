@@ -25,7 +25,7 @@ During training mode, weights are updated using backpropagation to reduce the lo
 
 ---
 
-## 🤔 Which Task Type Should I Choose?
+## 🤔 Which Task Type Should I Choose For My Problem?
 #### **General Forward Pass Flow for Different Task Types in Neural Networks**
 
 Below is a step-by-step breakdown of the forward pass for different task types, including how the input and output vectors are represented and how they translate into meaningful predictions.
