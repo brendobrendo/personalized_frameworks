@@ -53,6 +53,8 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
         - Sigmoid is a smooth and continuous function, meaning it allows gradient-based optimization (backpropagation) to work effectively.
         - Since it has a well-defined derivative: ![Sigmoid Derivative](https://latex.codecogs.com/png.latex?%5Csigma%27%28x%29%20%3D%20%5Csigma%28x%29%281%20-%20%5Csigma%28x%29%29) it provides a convenient way to compute gradients, helping neural networks learn efficiently.
 
+--
+
 - 💡 **Personal Helper Note: Why is ![e](https://latex.codecogs.com/png.latex?e) (Euler's Number) used in the Sigmoid Function?** Euler's number ![e ≈ 2.718](https://latex.codecogs.com/png.latex?e%20%5Capprox%202.718) plays a key role in the sigmoid function due to its natural mathematical properties:
     - **Exponential Growth and Decay**
         - The ![e^-x](https://latex.codecogs.com/png.latex?e%5E%7B-x%7D) term ensures a **smooth, and gradual transition** between 0 and 1.
