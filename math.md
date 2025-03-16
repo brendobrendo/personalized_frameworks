@@ -1,3 +1,4 @@
+### Why Multiplication is Just Organized, Faster Addition
 At its fundamental level, **multiplication is an abstraction of repeated addition**. When one multiplies two numbers, such as 4 × 3, the operation represents adding the number 4 to itself three times:  
 4 + 4 + 4 = 12.
 
