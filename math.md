@@ -34,7 +34,7 @@ In summary, the debate centers on whether mathematical objects have an existence
 
 ### Euler's Number and Pi: Realist vs Anti-Realist Perspectives
 
-In the context of Euler's number (\(e\)) and Pi (\(\pi\)), realists and anti-realists would have different perspectives on the nature of these mathematical constants.
+In the context of Euler's number (![e](https://latex.codecogs.com/png.latex?e)) and Pi (![e](https://latex.codecogs.com/png.latex?\pi)), realists and anti-realists would have different perspectives on the nature of these mathematical constants.
 
 #### **Realist Perspective**
 
