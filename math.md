@@ -52,11 +52,6 @@ An **anti-realist** would reject the view that ![e](https://latex.codecogs.com/p
 
 - **Pi (![pi](https://latex.codecogs.com/png.latex?\pi))**: Similarly, anti-realists would see Pi as a concept that arises from our understanding of geometry. It is a ratio, but it does not exist as an independent entity; it is a convenient and powerful tool for solving problems related to circles. The fact that Pi is irrational is a property that emerges from the system of real numbers, but this property is not intrinsic to any external mathematical reality—just a feature of the way humans have structured mathematical systems.
 
-#### **In Summary**
-
-- **Realists** see ![e](https://latex.codecogs.com/png.latex?e) and ![pi](https://latex.codecogs.com/png.latex?\pi) as real, abstract entities with independent existence in the mathematical realm, existing regardless of human awareness.
-- **Anti-realists** view ![e](https://latex.codecogs.com/png.latex?e) and ![pi](https://latex.codecogs.com/png.latex?\pi) as constructs or inventions that humans created to describe certain patterns and structures in the world, and their "existence" depends on the frameworks and systems we develop.
-
 ## Why Multiplication is Just Organized, Faster Addition
 At its fundamental level, **multiplication is an abstraction of repeated addition**. When one multiplies two numbers, such as 4 × 3, the operation represents adding the number 4 to itself three times:  
 4 + 4 + 4 = 12.
@@ -84,7 +79,11 @@ When extending this approach to the multiplication of **multi-digit numbers**, s
 
 Thus, multiplication—whether for single-digit or multi-digit numbers—can be understood as a **hierarchical application of addition**, where repeated addition operates at the core of the process.
 
-**In summary:**
-- Multiplication simplifies the process of adding the same number multiple times.
-- Early pedagogical methods emphasize memorization for speed, while the underlying mechanics remain rooted in addition.
-- Even advanced multiplication algorithms are built upon summing partial results derived from repeated addition.
+## Euler's Number (![e](https://latex.codecogs.com/png.latex?e))
+Euler's number, denoted as e, is a fundamental mathematical constant approximately equal to **2.71828**. It is the base of the natural logarithm and plays a crucial role in various areas of mathematics, especially in calculus, complex analysis, and differential equations. The number is named after the Swiss mathematician **Leonhard Euler**, who first explored its properties in the 18th century, although its significance had been noted earlier by other mathematicians.
+
+### Defining Euler's Number (![e](https://latex.codecogs.com/png.latex?e))
+Euler's number can be defined in several ways, but the most common and intuitive is through the limit expression:
+
+![Limit of compound interest](https://latex.codecogs.com/png.latex?e%20=%20%5Clim_%7Bn%20%5Cto%20%5Cinfty%7D%20%5Cleft%281%20%2B%20%5Cfrac%7B1%7D%7Bn%7D%5Cright%29%5En)
+
