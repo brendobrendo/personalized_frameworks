@@ -34,28 +34,28 @@ In summary, the debate centers on whether mathematical objects have an existence
 
 ### Euler's Number and Pi: Realist vs Anti-Realist Perspectives
 
-In the context of Euler's number (![e](https://latex.codecogs.com/png.latex?e)) and Pi (![e](https://latex.codecogs.com/png.latex?\pi)), realists and anti-realists would have different perspectives on the nature of these mathematical constants.
+In the context of Euler's number (![e](https://latex.codecogs.com/png.latex?e)) and Pi (![pi](https://latex.codecogs.com/png.latex?\pi)), realists and anti-realists would have different perspectives on the nature of these mathematical constants.
 
 #### **Realist Perspective**
 
-A **mathematical realist** would argue that Euler's number (\(e\)) and Pi (\(\pi\)) are real, abstract mathematical entities that exist independently of human thought or observation. These constants are part of the underlying structure of the universe, and their properties exist in a non-physical, abstract realm. 
+A **mathematical realist** would argue that Euler's number (\(e\)) and Pi (![pi](https://latex.codecogs.com/png.latex?\pi)) are real, abstract mathematical entities that exist independently of human thought or observation. These constants are part of the underlying structure of the universe, and their properties exist in a non-physical, abstract realm. 
 
-- **Euler's number (\(e\))**: Realists would argue that \(e\) exists independently of human discovery. It represents the natural growth rate and the limit of certain sequences, and it is inherent to the structure of mathematics itself. Just like any mathematical entity, it has a precise and objective existence, and its properties (such as being irrational) are discovered, not invented.
+- **Euler's number (![e](https://latex.codecogs.com/png.latex?e))**: Realists would argue that ![e](https://latex.codecogs.com/png.latex?e) exists independently of human discovery. It represents the natural growth rate and the limit of certain sequences, and it is inherent to the structure of mathematics itself. Just like any mathematical entity, it has a precise and objective existence, and its properties (such as being irrational) are discovered, not invented.
 
-- **Pi (\(\pi\))**: Similarly, realists would believe that Pi exists as an abstract object, independent of any human intervention. Pi is the ratio of the circumference of a circle to its diameter, and realists would say that it exists in all circles, regardless of whether humans recognize it. Its irrationality and transcendence are considered inherent properties of the number itself, waiting to be discovered.
+- **Pi (![pi](https://latex.codecogs.com/png.latex?\pi))**: Similarly, realists would believe that Pi exists as an abstract object, independent of any human intervention. Pi is the ratio of the circumference of a circle to its diameter, and realists would say that it exists in all circles, regardless of whether humans recognize it. Its irrationality and transcendence are considered inherent properties of the number itself, waiting to be discovered.
 
 #### **Anti-Realist Perspective**
 
-An **anti-realist** would reject the view that \(e\) and \(\pi\) are independent entities that exist in a non-physical realm. Instead, they would argue that these constants are human-made concepts or useful fictions that we have constructed to describe patterns in the world. According to this view, while Euler's number and Pi are extremely useful, their existence is contingent on the frameworks and contexts we use them in, and they do not "exist" independently of human thought.
+An **anti-realist** would reject the view that ![e](https://latex.codecogs.com/png.latex?e) and ![pi](https://latex.codecogs.com/png.latex?\pi) are independent entities that exist in a non-physical realm. Instead, they would argue that these constants are human-made concepts or useful fictions that we have constructed to describe patterns in the world. According to this view, while Euler's number and Pi are extremely useful, their existence is contingent on the frameworks and contexts we use them in, and they do not "exist" independently of human thought.
 
-- **Euler's number (\(e\))**: Anti-realists would argue that \(e\) is a mathematical construct derived from the properties of growth and compounding processes. While it has immense utility in describing natural phenomena like exponential growth, it does not exist independently as a discovered entity. Rather, \(e\) is a useful abstraction developed by humans to describe certain types of mathematical problems.
+- **Euler's number (![e](https://latex.codecogs.com/png.latex?e))**: Anti-realists would argue that ![e](https://latex.codecogs.com/png.latex?e) is a mathematical construct derived from the properties of growth and compounding processes. While it has immense utility in describing natural phenomena like exponential growth, it does not exist independently as a discovered entity. Rather, ![e](https://latex.codecogs.com/png.latex?e) is a useful abstraction developed by humans to describe certain types of mathematical problems.
 
-- **Pi (\(\pi\))**: Similarly, anti-realists would see Pi as a concept that arises from our understanding of geometry. It is a ratio, but it does not exist as an independent entity; it is a convenient and powerful tool for solving problems related to circles. The fact that Pi is irrational is a property that emerges from the system of real numbers, but this property is not intrinsic to any external mathematical reality—just a feature of the way humans have structured mathematical systems.
+- **Pi (![pi](https://latex.codecogs.com/png.latex?\pi))**: Similarly, anti-realists would see Pi as a concept that arises from our understanding of geometry. It is a ratio, but it does not exist as an independent entity; it is a convenient and powerful tool for solving problems related to circles. The fact that Pi is irrational is a property that emerges from the system of real numbers, but this property is not intrinsic to any external mathematical reality—just a feature of the way humans have structured mathematical systems.
 
 #### **In Summary**
 
-- **Realists** see \(e\) and \(\pi\) as real, abstract entities with independent existence in the mathematical realm, existing regardless of human awareness.
-- **Anti-realists** view \(e\) and \(\pi\) as constructs or inventions that humans created to describe certain patterns and structures in the world, and their "existence" depends on the frameworks and systems we develop.
+- **Realists** see ![e](https://latex.codecogs.com/png.latex?e) and ![pi](https://latex.codecogs.com/png.latex?\pi) as real, abstract entities with independent existence in the mathematical realm, existing regardless of human awareness.
+- **Anti-realists** view ![e](https://latex.codecogs.com/png.latex?e) and ![pi](https://latex.codecogs.com/png.latex?\pi) as constructs or inventions that humans created to describe certain patterns and structures in the world, and their "existence" depends on the frameworks and systems we develop.
 
 ## Why Multiplication is Just Organized, Faster Addition
 At its fundamental level, **multiplication is an abstraction of repeated addition**. When one multiplies two numbers, such as 4 × 3, the operation represents adding the number 4 to itself three times:  
