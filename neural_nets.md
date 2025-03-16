@@ -33,6 +33,7 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 
 ### **1. Binary Classification**
 **Example Task:** Determining if an email is spam (1) or not spam (0).  
+
 **Input Representation:** A feature vector representing email characteristics, such as word frequencies, sender reputation, and presence of specific phrases. 
 
 ![Vector X](https://latex.codecogs.com/png.latex?X%20%3D%20%5B0.2%2C%200.5%2C%200.8%2C%200.1%2C%200.6%5D)
@@ -44,7 +45,7 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 - **σ(x)** transforms the logit into a probability.
 - **y** is the final probability output of the neural network, which determines classification (e.g., spam vs. not spam).
 
-- **Personal Helper Note: Why use the Sigmoid Function (σ(x))?**
+💡 **Personal Helper Note: Why use the Sigmoid Function (σ(x))?**
     - **Monotonic and Asymptotic Behavior.** 
         - Sigmoid is **monotonic,** meaning as input ![x](https://latex.codecogs.com/png.latex?x) increases, the output σ(x) never decreases. 
         - It is **asymptotic** as it approaches **1** as ![Sigmoid Behavior](https://latex.codecogs.com/png.latex?x%5Cto%5Cinfty) and **0** as ![x → −∞](https://latex.codecogs.com/png.latex?x%20%5Cto%20-%5Cinfty).
@@ -52,7 +53,7 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
         - Sigmoid is a smooth and continuous function, meaning it allows gradient-based optimization (backpropagation) to work effectively.
         - Since it has a well-defined derivative: ![Sigmoid Derivative](https://latex.codecogs.com/png.latex?%5Csigma%27%28x%29%20%3D%20%5Csigma%28x%29%281%20-%20%5Csigma%28x%29%29) it provides a convenient way to compute gradients, helping neural networks learn efficiently.
 
-- **Personal Helper Note: Why is ![e](https://latex.codecogs.com/png.latex?e) (Euler's Number) used in the Sigmoid Function?** Euler's number ![e ≈ 2.718](https://latex.codecogs.com/png.latex?e%20%5Capprox%202.718) plays a key role in the sigmoid function due to its natural mathematical properties:
+💡 **Personal Helper Note: Why is ![e](https://latex.codecogs.com/png.latex?e) (Euler's Number) used in the Sigmoid Function?** Euler's number ![e ≈ 2.718](https://latex.codecogs.com/png.latex?e%20%5Capprox%202.718) plays a key role in the sigmoid function due to its natural mathematical properties:
 1. **Exponential Growth and Decay**
     - The ![e^-x](https://latex.codecogs.com/png.latex?e%5E%7B-x%7D) term ensures a **smooth, and gradual transition** between 0 and 1.
     - As ![x](https://latex.codecogs.com/png.latex?x) increases, ![e^-x](https://latex.codecogs.com/png.latex?e%5E%7B-x%7D) shrinks exponentially, making σ(x) approach 1.
@@ -62,10 +63,9 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
     - The transformation: ![sigmoid](https://latex.codecogs.com/png.latex?%5Csigma%28x%29%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-x%7D%7D) comes from the logistic equation used in statistics: ![log-odds](https://latex.codecogs.com/png.latex?%5Clog%5Cleft%28%5Cfrac%7Bp%7D%7B1-p%7D%5Cright%29%20%3D%20x) where ![p](https://latex.codecogs.com/png.latex?p)
  is the probability of an event occurring.
 
-
-
-
 **Output Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
+
+![classification rule](https://latex.codecogs.com/png.latex?y%20%3E%200.5%20%5CRightarrow%20%5Cmathbf%7BSpam%20%281%29%7D%2C%20%5Ctext%7Belse%7D%20%5CRightarrow%20%5Cmathbf%7BNot%20Spam%20%280%29%7D)
 
 ---
 
