@@ -33,7 +33,8 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 
 ### **1. Binary Classification**
 **Example Task:** Determining if an email is spam (1) or not spam (0).  
-**Input Representation:** A feature vector representing email characteristics, such as word frequencies, sender reputation, and presence of specific phrases.  
+**Input Representation:** A feature vector representing email characteristics, such as word frequencies, sender reputation, and presence of specific phrases. 
+
 ![Vector X](https://latex.codecogs.com/png.latex?X%20%3D%20%5B0.2%2C%200.5%2C%200.8%2C%200.1%2C%200.6%5D)
 
 **Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
@@ -42,9 +43,13 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 - **WX + b** is the raw, unbounded score (logit).
 - **σ(x)** transforms the logit into a probability.
 - **y** is the final probability output of the neural network, which determines classification (e.g., spam vs. not spam).
-- **Monotonic and Asymptotic Behavior.** 
-    - Sigmoid is **monotonic,** meaning as input ![x](https://latex.codecogs.com/png.latex?x) increases, the output σ(x) never decreases. 
-    - It is **asymptotic** as it approaches **1** as ![Sigmoid Behavior](https://latex.codecogs.com/png.latex?x%5Cto%5Cinfty) and **0** as ![x → −∞](https://latex.codecogs.com/png.latex?x%20%5Cto%20-%5Cinfty).
+- **Why use the Sigmoid Function (σ(x))**
+    - **Monotonic and Asymptotic Behavior.** 
+        - Sigmoid is **monotonic,** meaning as input ![x](https://latex.codecogs.com/png.latex?x) increases, the output σ(x) never decreases. 
+        - It is **asymptotic** as it approaches **1** as ![Sigmoid Behavior](https://latex.codecogs.com/png.latex?x%5Cto%5Cinfty) and **0** as ![x → −∞](https://latex.codecogs.com/png.latex?x%20%5Cto%20-%5Cinfty).
+    - **Smooth and differentiable**
+        - Sigmoid is a smooth and continuous function, meaning it allows gradient-based optimization (backpropagation) to work effectively.
+        - Since it has a well-defined derivative: ![Sigmoid Derivative](https://latex.codecogs.com/png.latex?%5Csigma%27%28x%29%20%3D%20%5Csigma%28x%29%281%20-%20%5Csigma%28x%29%29) it provides a convenient way to compute gradients, helping neural networks learn efficiently.
 
 
 **Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
