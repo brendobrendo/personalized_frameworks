@@ -85,7 +85,10 @@ Euler's number, denoted as e, is a fundamental mathematical constant approximate
 ### Defining Euler's Number (![e](https://latex.codecogs.com/png.latex?e))
 Euler's number can be defined in several ways, but the most common and intuitive is through the limit expression:
 
-<div align="center">
-    ![Limit of compound interest](https://latex.codecogs.com/png.latex?e%20=%20%5Clim_%7Bn%20%5Cto%20%5Cinfty%7D%20%5Cleft%281%20%2B%20%5Cfrac%7B1%7D%7Bn%7D%5Cright%29%5En)
-</div>
+![Limit of compound interest](https://latex.codecogs.com/png.latex?e%20=%20%5Clim_%7Bn%20%5Cto%20%5Cinfty%7D%20%5Cleft%281%20%2B%20%5Cfrac%7B1%7D%7Bn%7D%5Cright%29%5En)
 
+### The Derivative of ![e^x](https://latex.codecogs.com/png.latex?e%5Ex) is Itself!
+
+This equation is famous for capturing that the exponential function with base e is its own derivative.
+
+![Derivative of e^x](https://latex.codecogs.com/png.latex?%5Cfrac%7Bd%7D%7Bdx%7D%20e%5Ex%20%3D%20e%5Ex)
