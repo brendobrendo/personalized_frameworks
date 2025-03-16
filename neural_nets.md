@@ -39,7 +39,7 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 
 ![Vector X](https://latex.codecogs.com/png.latex?X%20%3D%20%5B0.2%2C%200.5%2C%200.8%2C%200.1%2C%200.6%5D)
 
-**Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
+**Output Representation:** A single probability value between 0 and 1, [y], indicating how likely the email is spam.  
 
 ![Equation](https://latex.codecogs.com/png.latex?y%20%3D%20%5Csigma(WX%20%2B%20b)%2C%20%5Cquad%20%5Csigma(x)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-x%7D%7D)
 - **WX + b** is the raw, unbounded score (logit).
