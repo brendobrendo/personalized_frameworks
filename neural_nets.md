@@ -42,7 +42,10 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 - **WX + b** is the raw, unbounded score (logit).
 - **σ(x)** transforms the logit into a probability.
 - **y** is the final probability output of the neural network, which determines classification (e.g., spam vs. not spam).
-- **Monotonic and Asymptotic Behavior.** Sigmoid is **monotonic,** meaning as input ![x](https://latex.codecogs.com/png.latex?x) increases, the output σ(x) never decreases. It is **asymptotic** as it approaches **1** as ![**Sigmoid Behavior**](https://latex.codecogs.com/png.latex?%5Cmathbf%7Bx%20%5Cto%20%5Cinfty%7D) and **0** as  
+- **Monotonic and Asymptotic Behavior.** 
+    - Sigmoid is **monotonic,** meaning as input ![x](https://latex.codecogs.com/png.latex?x) increases, the output σ(x) never decreases. 
+    - It is **asymptotic** as it approaches **1** as ![Sigmoid Behavior](https://latex.codecogs.com/png.latex?x%5Cto%5Cinfty) and **0** as ![x → −∞](https://latex.codecogs.com/png.latex?x%20%5Cto%20-%5Cinfty).
+
 
 **Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
 
