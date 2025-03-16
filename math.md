@@ -13,7 +13,7 @@ As students progress to working with **larger numbers**, multiplication becomes 
 
 This process is commonly formalized through **long multiplication**, where the digits are partitioned according to place value and each is multiplied separately before summing the results. For example:
 
-![23 x 4 = 92](https://latex.codecogs.com/png.latex?23%20%5Ctimes%204%20%3D%2092)
+![Stacked Multiplication](https://latex.codecogs.com/png.latex?\begin{array}{r}23\\\times\;4\\\hline92\end{array})
 
 Here, **92** is the result of aggregating 80 (4 multiplied by 20) and 12 (4 multiplied by 3). In essence, multiplication in this context is a structured series of additions of these scaled quantities.
 
