@@ -34,7 +34,7 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 ### **1. Binary Classification**
 **Example Task:** Determining if an email is spam (1) or not spam (0).  
 **Input Representation:** A feature vector representing email characteristics, such as word frequencies, sender reputation, and presence of specific phrases.  
-<code>X = [0.2, 0.5, 0.8, 0.1, 0.6]</code>
+![Vector X](https://latex.codecogs.com/png.latex?X%20%3D%20%5B0.2%2C%200.5%2C%200.8%2C%200.1%2C%200.6%5D)
 
 **Output Representation:** A single probability value between 0 and 1, indicating how likely the email is spam.  
 
@@ -48,8 +48,6 @@ Below is a step-by-step breakdown of the forward pass for different task types, 
 
 
 **Interpretation:** If \( y > 0.5 \), classify as **spam (1)**; otherwise, classify as **not spam (0)**.
-
-![**Sigmoid Behavior**](https://latex.codecogs.com/png.latex?%5Cmathbf%7Bx%20%5Cto%20%5Cinfty%7D)
 
 ---
 
