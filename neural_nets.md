@@ -194,7 +194,7 @@ Optimization functions help to reduce the error (loss) by adjusting the model's 
     - **Mathematical Expression:**  
     ![GD](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\eta%20\nabla_\theta%20J(\theta))
     
-    Where:  
+    - Where:  
         - ![theta](https://latex.codecogs.com/png.latex?\theta) are the model parameters  
         - ![eta](https://latex.codecogs.com/png.latex?\eta) is the learning rate  
         - ![J(theta)](https://latex.codecogs.com/png.latex?J(\theta)) is the loss function
