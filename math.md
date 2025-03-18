@@ -92,3 +92,28 @@ Euler's number can be defined in several ways, but the most common and intuitive
 This equation is famous for capturing that the exponential function with base e is its own derivative.
 
 ![Derivative of e^x](https://latex.codecogs.com/png.latex?%5Cfrac%7Bd%7D%7Bdx%7D%20e%5Ex%20%3D%20e%5Ex)
+
+e represents the base rate of growth for processes that are continuously compounding.
+
+### Continuous Growth Efficiency
+
+Imagine you're growing an investment or a population, and you want it to grow as quickly as possible given a fixed growth rate. The key is compounding frequency — how often you "apply" the growth.
+- If you compound once a year, you get modest growth.
+- If you compound twice a year, your growth improves.
+- If you compound every month, every day, or every minute, your growth keeps getting better.
+
+But there’s a limit to how much benefit you get from compounding more frequently.
+
+When you push this frequency to the extreme — compounding every instant — you get continuous compounding, and that’s where e naturally emerges.
+
+### Why is e optimal?
+
+The compounding periods formula (above) shows that as n approaches infinity, the total accumulated growth approaches e. This is the most efficient base for continuous growth, meaning no other base will yield a faster "natural" compounding rate when applied continuously.
+
+### e in Nature
+
+Bacteria populations, radioactive decay, compound interest, heat dissipation, and even neuronal firing in the brain all follow growth or decay rates that are best modeled with e because they change at every possible instant.
+
+### Why is it "efficient"?
+
+Because e perfectly balances the rate of change and the current size of what’s growing. In continuous models, the rate of growth is always proportional to the current amount, and e is the constant that governs that proportionality most naturally.
