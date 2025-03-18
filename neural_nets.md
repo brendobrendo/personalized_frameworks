@@ -187,25 +187,17 @@ Activation functions introduce non-linearities into the model, enabling it to le
 
 ### Optimization Functions
 Optimization functions help to reduce the error (loss) by adjusting the model's parameters.
+#### **Types of Optimization Functions and Their Uses**
 
-# Optimization Functions
-
-In neural networks, optimization functions are algorithms or methods used to minimize (or maximize) the loss function by updating the weights of the model. The most common method is based on gradient descent and its variants.
-
----
-
-## 1. Gradient Descent (GD)
-
-**Description:**  
-A first-order optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient.
-
-**Mathematical Expression:**  
-![GD](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\eta%20\nabla_\theta%20J(\theta))
-
-Where:  
-- ![theta](https://latex.codecogs.com/png.latex?\theta) are the model parameters  
-- ![eta](https://latex.codecogs.com/png.latex?\eta) is the learning rate  
-- ![J(theta)](https://latex.codecogs.com/png.latex?J(\theta)) is the loss function
+1. Gradient Descent (GD)
+    - **Description:**  A first-order optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient.
+    - **Mathematical Expression:**  
+    ![GD](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\eta%20\nabla_\theta%20J(\theta))
+    
+    Where:  
+        - ![theta](https://latex.codecogs.com/png.latex?\theta) are the model parameters  
+        - ![eta](https://latex.codecogs.com/png.latex?\eta) is the learning rate  
+        - ![J(theta)](https://latex.codecogs.com/png.latex?J(\theta)) is the loss function
 
 **First Used / Introduced By:**  
 Cauchy, 1847; further formalized by Robbins & Monro, 1951 (stochastic version).
