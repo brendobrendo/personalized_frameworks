@@ -213,7 +213,7 @@ Optimization functions help to reduce the error (loss) by adjusting the model's 
     ![BatchGD](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\eta%20\nabla_\theta%20J(\theta;%20X,%20Y))
     - **First Used / Introduced By:** Standard approach attributed to early numerical optimization practices (pre-1980s).
 
-4. Adam (Adaptive Moment Estimation)
+4. **Adam (Adaptive Moment Estimation)**
     - **Description:** Combines the benefits of AdaGrad and RMSProp. It computes adaptive learning rates for each parameter using estimates of first and second moments of the gradients.
     - **Mathematical Expression:**
     ![Adam1](https://latex.codecogs.com/png.latex?m_t%20=%20\beta_1%20m_{t-1}%20+%20(1%20-%20\beta_1)%20\nabla_\theta%20J(\theta))  
@@ -223,50 +223,48 @@ Optimization functions help to reduce the error (loss) by adjusting the model's 
     ![Adam5](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\eta%20\frac{\hat{m}_t}{\sqrt{\hat{v}_t}%20+%20\epsilon})
     - **First Used / Introduced By:** Diederik P. Kingma & Jimmy Ba, 2014.
 
-5. AdaGrad (Adaptive Gradient Algorithm)
+5. **AdaGrad (Adaptive Gradient Algorithm)**
     - **Description:** Adjusts the learning rate for each parameter based on past gradients, performing smaller updates for frequent parameters and larger updates for infrequent ones.
     - **Mathematical Expression:**  
     ![AdaGrad](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\frac{\eta}{\sqrt{G_t%20+%20\epsilon}}%20\nabla_\theta%20J(\theta))
     - **First Used / Introduced By:** John Duchi, Elad Hazan, Yoram Singer, 2011.
 
-6. RMSProp (Root Mean Square Propagation)
+6. **RMSProp (Root Mean Square Propagation)**
     - **Description:** Modifies AdaGrad to resolve its radically diminishing learning rates by using a moving average of squared gradients.
     - **Mathematical Expression:**  
     ![RMSProp1](https://latex.codecogs.com/png.latex?E[g^2]_t%20=%20\gamma%20E[g^2]_{t-1}%20+%20(1%20-%20\gamma)%20g_t^2)  
     ![RMSProp2](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20\frac{\eta}{\sqrt{E[g^2]_t%20+%20\epsilon}}%20g_t)
     - **First Used / Introduced By:** Tieleman & Hinton, 2012 (in a Coursera lecture by Geoffrey Hinton).
 
-7. Adadelta
+7. **Adadelta**
     - **Description:** An extension of AdaGrad that seeks to reduce its aggressive, monotonically decreasing learning rate by limiting the window of accumulated past gradients.
     - **Mathematical Expression:** 
     ![Adadelta](https://latex.codecogs.com/png.latex?\Delta%20\theta_t%20=%20-%20\frac{\sqrt{\Delta%20\theta_{t-1}%20+%20\epsilon}}{\sqrt{E[g^2]_t%20+%20\epsilon}}%20g_t)
     - **First Used / Introduced By:**  Matthew D. Zeiler, 2012.
 
-8. Nesterov Momentum (NAG)
+8. **Nesterov Momentum (NAG)**
     - **Description:** An improved version of momentum-based SGD. It anticipates the future position of the parameters by applying the momentum step before computing the gradient.
     - **Mathematical Expression:**  
     ![NAG1](https://latex.codecogs.com/png.latex?v_{t+1}%20=%20\gamma%20v_t%20+%20\eta%20\nabla_\theta%20J(\theta%20-%20\gamma%20v_t))  
     ![NAG2](https://latex.codecogs.com/png.latex?\theta%20=%20\theta%20-%20v_{t+1})
     - **First Used / Introduced By:** Yurii Nesterov, 1983.
 
-9. Conjugate Gradient
+9. **Conjugate Gradient**
     - **Description:** An optimization method for large-scale problems. It solves systems of linear equations iteratively without storing large matrices.
     - **Mathematical Expression:** (Iterative updates based on conjugate directions instead of simple gradients; too lengthy to reduce to a single formula.)
     - **First Used / Introduced By:** Magnus Hestenes and Eduard Stiefel, 1952.
 
-10. Coordinate Descent
+10. **Coordinate Descent**
     - **Description:** An optimization algorithm that minimizes along one coordinate direction at a time (cycling or choosing randomly), making it simpler and efficient for some problems.
     - **Mathematical Expression:** ![CoordDesc](https://latex.codecogs.com/png.latex?\theta_j%20=%20\theta_j%20-%20\eta%20\frac{\partial%20J}{\partial%20\theta_j})
     - **First Used / Introduced By:** Arthur F. Veinott, 1960.
 
-11. Bayesian Optimization
+11. **Bayesian Optimization**
     - **Description:** A probabilistic model-based optimization technique that builds a surrogate model to approximate the objective function and chooses samples using an acquisition function.
     - **Mathematical Expression:**  
         - Utilizes Gaussian Processes (or other probabilistic models)  
         - Optimizes acquisition functions like Expected Improvement (EI) or Upper Confidence Bound (UCB)
     - **First Used / Introduced By:** Jonas Mockus et al., 1978.
-
----
 
 ### Loss Functions
 Loss functions measure the discrepancy between predicted and actual outcomes, guiding optimization.
