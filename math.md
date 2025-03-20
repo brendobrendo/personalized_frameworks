@@ -117,3 +117,61 @@ Bacteria populations, radioactive decay, compound interest, heat dissipation, an
 ### Why is it "efficient"?
 
 Because e perfectly balances the rate of change and the current size of what’s growing. In continuous models, the rate of growth is always proportional to the current amount, and e is the constant that governs that proportionality most naturally.
+
+## The Gaussian Distribution
+
+### When and how was the Gaussian Distribution developed?
+
+- The **Gaussian distribution** (also known as the **Normal distribution**) was formally introduced by **Carl Friedrich Gauss** around **1809**.
+- Gauss used it in **astronomy** to model the distribution of observational errors when predicting planetary orbits.
+- Earlier, in **1733**, **Abraham de Moivre** approximated the binomial distribution with what would later be recognized as the normal curve.
+- Gauss's work was closely tied to the **method of least squares**, a technique he formalized, which minimizes the sum of squared deviations (errors) and naturally leads to the normal distribution as the underlying model for errors.
+
+### Why is it believed to be a good representation of randomness and variations for errors?
+
+1. **Central Limit Theorem (CLT)**  
+   The CLT states that when you sum or average a large number of independent and identically distributed random variables (regardless of their individual distributions), the result tends to be normally distributed.  
+   Since many types of errors are caused by the accumulation of numerous small, independent factors (e.g., instrument limitations, human variability, environmental conditions), their combined effect often forms a normal distribution.
+
+2. **Symmetry and Simplicity**  
+   The Gaussian distribution is symmetric around its mean, which matches the intuitive expectation that positive and negative errors should be equally likely.  
+   Additionally, it is fully described by just two parameters: the **mean** (center) and **variance** (spread), making it simple yet powerful.
+
+3. **Maximum Entropy Principle**  
+   Of all continuous distributions with a specified mean and variance, the normal distribution maximizes entropy, meaning it assumes the least beyond those two constraints.  
+   This makes it a "default" model when there is limited information about the process generating the data.
+
+4. **Empirical Success**  
+   The normal distribution has historically been shown to closely model a wide variety of real-world processes (e.g., human heights, IQ scores, measurement errors).  
+   Its consistent success in describing natural and human-made variability has made it a cornerstone in statistics, physics, economics, and the social sciences.
+
+## Bayes Theorem
+
+### When and how was Bayes' Theorem developed?
+
+- **Bayes' Theorem** was first formulated by **Thomas Bayes**, an English statistician and minister, in the **mid-18th century**.
+- His work was published posthumously in **1763** as *"An Essay towards solving a Problem in the Doctrine of Chances"*, edited and presented by his friend **Richard Price**.
+- Bayes originally aimed to solve a philosophical problem related to probability: how to update beliefs (probabilities) when new evidence is observed.
+- Later, **Pierre-Simon Laplace** independently expanded and popularized Bayes' ideas, applying them to broader scientific problems in the late 1700s and early 1800s.
+
+### Why is it believed to be useful or representative of some aspect of the real world?
+
+1. **Belief Updating Under Uncertainty**  
+   Bayes' Theorem provides a **systematic way to update probabilities** when new data is observed.  
+   This mirrors real-world decision-making where beliefs and decisions evolve as more information becomes available.
+
+2. **Connection to Human Reasoning**  
+   Many studies suggest that people intuitively reason in ways similar to Bayesian updating.  
+   When we revise our judgments based on new evidence (e.g., suspecting illness after seeing symptoms), we're essentially applying Bayesian logic.
+
+3. **Flexibility in Incomplete Information Scenarios**  
+   In many real-world problems, data is noisy, incomplete, or uncertain.  
+   Bayes' Theorem thrives in these settings by providing a framework to incorporate **prior knowledge** with **observed data**, making it especially useful in fields like **medical diagnosis**, **spam filtering**, and **machine learning**.
+
+4. **Foundation of Bayesian Inference**  
+   It underpins **Bayesian statistics**, where models are built around updating distributions based on evidence, rather than just point estimates.  
+   This approach offers more **robust uncertainty quantification** compared to traditional (frequentist) methods.
+
+5. **Wide Applicability**  
+   Bayes' Theorem is essential in a rang
+
