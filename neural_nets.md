@@ -386,6 +386,78 @@ The choice of loss function directly affects the learning process.
 ---
 
 ## History
-The concept of neural networks dates back to the 1940s, with key advancements such as the backpropagation algorithm in the 1980s.
+
+- 1943 - McCulloch & Pitts introduced the first mathematical model of a neuron, using a simple step function (binary output based on a threshold). The McCulloch-Pitts model hinted at multi-layer concepts but wasn’t used practically.
+
+- 1958 - The basic idea of the perceptron (a basic FFN unit) was introduced by **Frank Rosenblatt**. Early FFNs were limited to shallow architectures.
+
+- 1969 - **Minsky and Papert’s book “Perceptrons”** showed the limitations of single-layer perceptrons (e.g., inability to solve XOR), which led to an *AI winter* for neural nets. The book rigorously analyzed the mathematical limits of single-layer perceptrons.
+
+  - They proved that single-layer perceptrons cannot solve problems that are not *linearly separable*, with XOR being the most famous example. A single-layer perceptron can only solve problems where classes can be separated by a *linear boundary* (e.g., AND, OR), but XOR requires a non-linear decision boundary.
+  
+  - The book was widely interpreted as a condemnation of neural networks as a whole, even though multi-layer networks could, in theory, solve XOR (but lacked practical training algorithms like backpropagation at that time).
+
+  - As a result, research funding dried up, and attention shifted to symbolic AI approaches for over a decade.
+
+- **Where I’m not following:** What is a *linear decision boundary* and why is that necessary to build a neural network model? I understand linear separability conceptually but haven’t internalized why the perceptron’s computations inherently rely on it.
+
+- In the 1960s, the single-layer perceptron was one of the only practical neural network models available. When **Minsky and Papert** published *Perceptrons*, they proved that single-layer perceptrons could not solve problems like XOR, which are not linearly separable.
+
+  - Non-linearly separable problems—like XOR—are common in real-world classification tasks (e.g., vision, sensor data interpretation).
+  
+  - The findings were overgeneralized as evidence that *all* neural networks were flawed.
+  
+  - Researchers lacked effective ways to train multi-layer perceptrons (since backpropagation wasn’t widely adopted until the mid-1980s), leading to the *AI winter*.
+
+- 1970s - Theoretical groundwork for gradient-based learning was developed but not widely applied to neural nets.
+
+- 1970s-1980s - Researchers explored multi-layer structures (2+ layers) but lacked efficient training algorithms.
+
+- 1980 - **Kunihiko Fukushima** introduced the *Neocognitron*, laying the foundation for modern CNNs. It used convolutional and pooling layers but lacked backpropagation.
+
+  - The *Neocognitron* was inspired by the visual cortex and designed to recognize visual patterns hierarchically.
+  
+  - Alternated between **S-layers** (similar to convolutional layers) and **C-layers** (similar to pooling layers).
+  
+  - Used an unsupervised learning mechanism (winner-takes-all and Hebbian-like updates).
+
+- 1986 - **Rumelhart, Hinton, and Williams** published the landmark paper on backpropagation, *“Learning Representations by Back-Propagating Errors”*.
+
+  - This paper kicked off the modern use of multi-layer perceptrons (MLPs) and deep feed-forward networks and introduced an early concept of Recurrent Neural Networks (RNNs).
+  
+  - Led to the adoption of smooth, differentiable activations like *sigmoid* and *tanh*.
+
+- 1989 - **Yann LeCun** applied backpropagation to CNN-like structures for digit recognition using the MNIST dataset.
+
+  - Introduced hierarchical architectures that stacked feature extraction (convolution) layers followed by subsampling (pooling) layers, similar to the Neocognitron.
+
+- 1990 - Jeffrey Elman formalized it with an architecture specifically designed for handling sequences over time.
+
+- 1997 - Long Short-Term Memory networks (LSTMs) were first introduced by Sepp Hochreiter and Jürgen Schmidhuber in their paper titled “Long Short-Term Memory”. LSTMs were a direct response to a major limitation of standard RNNs: the vanishing and exploding gradient problem. Traditional RNNs struggle with learning long-term dependencies because, during backpropagation through time (BPTT), gradients either diminish to near-zero (vanish) or grow exponentially (explode) as they are propagated across many timesteps. Hochreiter and Schmidhuber designed the LSTM architecture with special components, notably memory cells and gating mechanisms (input, output, and forget gates), to regulate the flow of information and gradients across long sequences.
+
+- 1998 - LeCun et al. introduced **LeNet-5**, one of the first successful CNN architectures, for handwritten digit recognition (MNIST).
+
+- 2001 - Echo State Networks (ESNs) were introduced by Herbert Jaeger in his paper titled “The 'Echo State' Approach to Analysing and Training Recurrent Neural Networks”. ESNs were directly influenced by standard RNNs, not LSTMs. The core idea behind ESNs was to address the difficulties of training traditional RNNs, specifically the instability and inefficiency of training all recurrent connections via backpropagation through time (BPTT). Unlike LSTMs, which introduced complex gating mechanisms to solve the vanishing gradient problem, ESNs introduced a simpler idea: (1) Create a large, fixed, and randomly connected recurrent layer (the reservoir). (2) Only train the output weights (from the reservoir to the output layer). This approach kept the recurrent weights unchanged after initialization, making ESNs computationally cheaper to train compared to standard RNNs or LSTMs. ESNs evolved from RNNs, focusing on simplifying training and addressing stability, without the complex memory mechanisms of LSTMs. They are part of a broader class of **reservoir computing methods**.
+
+- 2012 - **AlexNet** by **Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton** won the ImageNet competition, drastically outperforming traditional methods.
+
+  - Leveraged deep CNN layers, *ReLU* activations, GPU acceleration, and *dropout* regularization.
+  
+  - Triggered the *deep learning revolution* in computer vision.
+  
+  - *ReLU* began replacing sigmoid/tanh due to its simplicity and ability to avoid the vanishing gradient problem.
+  
+  - *Dropout* is a regularization technique where, during training, you randomly "drop" (set to zero) certain neurons in the network to prevent overfitting and encourage redundancy.
+
+- 2013 - OverFeat was introduced by Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, and Yann LeCun in their paper titled “OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks”. It was an early end-to-end system that extended CNNs beyond simple image classification to include object localization and detection, all within a unified CNN framework. OverFeat built upon previous CNN architectures (like LeNet and AlexNet) but applied sliding window techniques using CNNs to simultaneously handle Image classification, Bounding box prediction (localization), Object detection. OverFeat was one of the early systems to integrate detection into CNNs, before modern object detectors like YOLO (2016) and Faster R-CNN (2015) became widespread. It leveraged pre-trained CNNs and demonstrated that CNNs could generalize well to not just classification tasks but also spatial prediction tasks like localization and detection.
+
+
+
+- 2015 - **ResNets** were introduced by **Kaiming He, Xiangyu Zhang, Shaoquing Ren, and Jian Sun**.
+
+  - Their paper *“Deep Residual Learning for Image Recognition”* won the 2015 ImageNet Large Scale Visual Recognition Challenge.
+  
+  - **ResNet-152** significantly outperformed earlier architectures like VGGNet while using fewer parameters in many cases.
+
 
 
