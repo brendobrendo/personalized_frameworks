@@ -1,15 +1,5 @@
 # Personalized Framework for Neural Networks
 
-## Helpful Terms To Keep Top of Mind
-- **Forward Pass**: The process of passing input through the network to generate an output.
-- **Backpropagation**: A method used for training the network by adjusting weights based on errors.
-- **Hyperparameters**: Configurations that define the model's structure and training process.
-- **Optimization Functions**: Algorithms that minimize loss functions during training.
-- **Loss Functions**: A function that measures how well the model's predictions match the expected result.
-- **Gradients**: Measures of how much a change in input affects the output.
-
----
-
 ## Neural Net Architecture
 
 The neural network consists of layers, weights, and connections that allow information to flow and be processed.
@@ -433,9 +423,7 @@ The choice of loss function directly affects the learning process.
 
 - 2014 - GoogLeNet, based on the Inception architecture, was introduced in 2014 by researchers at Google in the paper *"Going Deeper with Convolutions"* by Christian Szegedy et al. It is a deep convolutional neural network that won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2014 and marked a significant advancement in CNN design. Unlike traditional CNNs that stack convolutional layers sequentially, GoogLeNet introduced the Inception module, which applies multiple filter sizes (1x1, 3x3, 5x5) in parallel to capture features at different spatial scales. To keep the model computationally efficient, it used 1x1 convolutions for dimensionality reduction, an idea inspired by the Network-in-Network framework. This allowed the network to go deeper—22 layers—while using significantly fewer parameters than previous models like AlexNet. GoogLeNet also incorporated global average pooling instead of fully connected layers at the end, reducing overfitting and improving generalization. The architecture demonstrated that CNNs could be made deeper and more expressive without increasing computational cost, influencing many later models in the field.
 
-- 2015 - **ResNets** were introduced by **Kaiming He, Xiangyu Zhang, Shaoquing Ren, and Jian Sun**.
-  - Their paper *“Deep Residual Learning for Image Recognition”* won the 2015 ImageNet Large Scale Visual Recognition Challenge.
-  - **ResNet-152** significantly outperformed earlier architectures like VGGNet while using fewer parameters in many cases.
+- 2015 - **ResNets** were introduced by **Kaiming He, Xiangyu Zhang, Shaoquing Ren, and Jian Sun**. Their paper *“Deep Residual Learning for Image Recognition”* won the 2015 ImageNet Large Scale Visual Recognition Challenge. **ResNet-152** significantly outperformed earlier architectures like VGGNet while using fewer parameters in many cases.
 
 
 
