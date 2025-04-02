@@ -21,35 +21,62 @@
 - Understand the KPIs
 
 ```javascript
-function deleteFilteredRows() {
-  const nextThursday = new Date(getNextThursday());
+function processRoleConfirmations() {
+  const formSheet = getSheetByName('Role Confirmation Responses');
+  const meetingsSheet = getSheetByName('Meeting Confirmations');
+  const memberInfoSheet = getSheetByName('Member Info');
 
-  const sourceSheet = getSheetByName('TimeOffRequests');
-  const destinationSheet = getSheetByName('FilteredAbsences');
+  const formData = formSheet.getRange(2, 1, formSheet.getLastRow() - 1, 3).getValues();
+  const meetingsData = meetingsSheet.getRange(2, 1, meetingsSheet.getLastRow() - 1, 2).getValues();
+  const memberInfo = memberInfoSheet.getRange(2, 1, memberInfoSheet.getLastRow() - 1, 2).getValues();
 
-  const rowsToDelete = []; // Store actual row numbers to delete
-
-  roleConfirmationsFormResponsesData.forEach((subArray, i) => {
-    const rawDates = subArray.slice(2).join(', ');
-    const dateList = rawDates.split(',').map(date => date.trim());
-
-    const hasFutureDate = dateList.some(dateStr => {
-      const parsedDate = new Date(dateStr);
-      return parsedDate > nextThursday;
-    });
-
-    if (hasFutureDate) {
-      rowsToDelete.push(100 + i + 1); // Convert from slice index to 1-based row number
-    }
+  const emailToNameMap = {};
+  memberInfo.forEach(([email, name]) => {
+    emailToNameMap[email.trim().toLowerCase()] = name.trim();
   });
 
-  // Delete from source sheet (bottom to top!)
-  if (rowsToDelete.length > 0) {
-    rowsToDelete
-      .sort((a, b) => b - a) // Descending order
-      .forEach(rowNum => {
-        sourceSheet.deleteRow(rowNum);
-      });
-  }
+  formData.forEach(([timestamp, email, dateListRaw]) => {
+    const name = emailToNameMap[email.trim().toLowerCase()];
+    if (!name) {
+      Logger.log(`No name found for email: ${email}`);
+      return;
+    }
+
+    const confirmedDates = dateListRaw
+      .split(',')
+      .map(d => new Date(d.trim()))
+      .map(d => new Date(d.getFullYear(), d.getMonth(), d.getDate())); // Strip time
+
+    confirmedDates.forEach(date => {
+      for (let i = 0; i < meetingsData.length; i++) {
+        const [meetingDate, memberList] = meetingsData[i];
+        const normalizedMeetingDate = new Date(meetingDate.getFullYear(), meetingDate.getMonth(), meetingDate.getDate());
+
+        if (date.getTime() === normalizedMeetingDate.getTime()) {
+          const existingNames = memberList ? memberList.split(',').map(n => n.trim().toLowerCase()) : [];
+
+          if (!existingNames.includes(name.toLowerCase())) {
+            existingNames.push(name);
+            const formattedNames = existingNames.map(n => {
+              // Format the names back to proper case using memberInfo
+              for (let email in emailToNameMap) {
+                if (emailToNameMap[email].toLowerCase() === n) {
+                  return emailToNameMap[email];
+                }
+              }
+              return n; // fallback
+            });
+
+            meetingsSheet.getRange(i + 2, 2).setValue(formattedNames.join(', '));
+            Logger.log(`✅ Added ${name} to ${date.toLocaleDateString()}`);
+          } else {
+            Logger.log(`⚠️  Skipped duplicate: ${name} already confirmed for ${date.toLocaleDateString()}`);
+          }
+
+          break;
+        }
+      }
+    });
+  });
 }
 ```
