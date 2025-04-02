@@ -13,6 +13,8 @@
 - Be on time
 - Look like you can take care of peoples' things
 - Make eye contact
+- Blink
+- Smile
 - Say peoples' names
 - Ask questions
 - Use open hand gestures
@@ -21,18 +23,15 @@
 - Understand the KPIs
 
 ```javascript
-function processRoleConfirmations() {
-  const formSheet = getSheetByName('Role Confirmation Responses');
-  const meetingsSheet = getSheetByName('Meeting Confirmations');
-  const memberInfoSheet = getSheetByName('Member Info');
-
-  const formData = formSheet.getRange(2, 1, formSheet.getLastRow() - 1, 3).getValues();
-  const meetingsData = meetingsSheet.getRange(2, 1, meetingsSheet.getLastRow() - 1, 2).getValues();
-  const memberInfo = memberInfoSheet.getRange(2, 1, memberInfoSheet.getLastRow() - 1, 2).getValues();
-
+function addConfirmationsToTable() {
+  
   const emailToNameMap = {};
-  memberInfo.forEach(([email, name]) => {
-    emailToNameMap[email.trim().toLowerCase()] = name.trim();
+  memberData.forEach((memberRow) => {
+    const name = memberRow[1];
+    const email = memberRow[12];
+    if (email && name) {
+      emailToNameMap[email.trim()] = name.trim();
+    }
   });
 
   formData.forEach(([timestamp, email, dateListRaw]) => {
@@ -78,5 +77,18 @@ function processRoleConfirmations() {
       }
     });
   });
+  // const oneWeekOut = new Date(roleConfirmationsFormResponsesData[0][0]);
+
+  // roleConfirmationsFormResponsesData.forEach((subArray) => {
+  //   const rawDates = subArray.slice(2).join(', ');
+  //   const dateList = rawDates.split(',').map(date => date.trim());
+
+  //   dateList.forEach((date) => {
+  //     let formattedDate = new Date(date);
+  //     if (formattedDate.getTime() === oneWeekOut.getTime()) {
+  //       Logger.log('The date matches!');
+  //     }
+  //   })
+  // })
 }
 ```
