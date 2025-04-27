@@ -15,7 +15,6 @@ Discover both the *immediate* and *deeper* needs behind why the customer is in f
 
 **Key Questions to Ask:**
 - "What’s most important to you about [topic]?"
-- "What would success look like for you here?"
 - "Can you tell me more about what led you to think about this today?"
 
 **Mindset Reminder:**  
@@ -31,7 +30,7 @@ Connect the customer’s deeper needs to meaningful, valuable solutions they may
 **Sub-Skills:**
 - Translate needs into solutions, even when customers don’t explicitly ask.
 - Think in categories: protection, growth, access, convenience, rewards, security.
-- Frame recommendations around the *benefit* to them, not the *feature* of the product.
+- Frame recommendations around the *benefit* to them, not the *feature* of the product. ⭐
 - Prioritize honesty: only suggest things that truly match their situation and priorities.
 
 **Key Questions to Ask Yourself (silently):**
