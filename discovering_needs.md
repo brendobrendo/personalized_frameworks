@@ -169,4 +169,53 @@ Let others know what you're working on:
 _“I’m working on understanding people better and handling stress with more poise. Would you mind giving me feedback if you see something I can improve?”_
 
 ---
+# Parent vs Adult Communication (Transactional Analysis)
+
+| | **Parent** | **Adult** |
+|---|---|---|
+| **Core drive** | Preserve rules, offer guidance or correction | Gather facts, weigh options, solve problems objectively |
+| **Tone / sub-text** | Directive, evaluative, reassuring | Measured, curious, solution-focused |
+| **Verbal cues** | *Should, must, let me show you…* | *What, how, option, next step…* |
+| **Emotional flavour** | Past-oriented, authority-driven | Present-oriented, logic-driven |
+
+---
+
+## Customer Examples
+
+| **Ego state** | **Example** | **Meaning** |
+|---|---|---|
+| **Critical Parent** | "That overdraft fee is ridiculous." <br> "You should have told me this." | Policing and judging |
+| **Nurturing Parent** | "I brought my neighbor to help her open an account." | Guiding and protective |
+| **Adult** | "Can you walk me through this fee?" <br> "What rates are available?" | Seeking information and solutions |
+
+---
+
+## Banker Examples
+
+| **Ego state** | **Example** | **Customer might feel** |
+|---|---|---|
+| **Critical Parent (accidental)** | "You need to keep $1,500 or you’ll get fees." | Scolded or inferior |
+| **Nurturing Parent** | "Let’s do this together step-by-step." | Supported and reassured |
+| **Adult (ideal)** | "Here’s how the fee works. Would auto-transfer help avoid it?" | Respected and included |
+
+---
+
+## Best Practices
+
+- **Tune in**: Is the customer lecturing (Parent), venting (Child), or asking for data (Adult)?
+- **Aim for Adult mode**: Acknowledge emotion, then pivot to facts.
+- **Avoid Critical Parent language**: Replace “You should have…” with “Here’s an option for next time.”
+- **Use Nurturing Parent intentionally**: When guiding new or anxious customers.
+
+---
+
+## Cheat-Sheet
+
+- **Parent →** *Should / must / let me tell you* (use sparingly)
+- **Adult →** *Let’s look at / one option is…* (default communication mode)
+
+---
+
+Using Adult communication de-escalates issues, builds trust, and keeps conversations solution-focused — key skills for a Relationship Banker.
+
 
