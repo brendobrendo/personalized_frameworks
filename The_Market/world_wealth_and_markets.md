@@ -62,3 +62,4 @@
   The portion of U.S. debt held by individuals, corporations, state and local governments, foreign governments, and other non-federal entities. This includes marketable Treasury securities (Bills, Notes, Bonds, TIPS, FRNs) bought on the open market.
 
 - **Total Public Debt Outstanding**  
+      The sum of **Debt Held by the Public** and **Intragovernmental Holdings**. It reflects the **total amount the federal government owes** across all creditors, including itself.
