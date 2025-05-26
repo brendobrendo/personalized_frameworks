@@ -1,3 +1,11 @@
+## Global Wealth and GDP
+
+As of early 2025, global household wealth is estimated to be approximately **$454.4 trillion**. This figure encompasses financial assets such as stocks and bonds, as well as non-financial assets like real estate, minus liabilities. With a global population of about **8.16 billion people**, this translates to an average wealth of around **$55,700 per person**.
+
+The distribution of this wealth is highly uneven. According to the **UBS Global Wealth Report 2024**, the number of billionaires worldwide increased to **2,682**, collectively holding about **$14 trillion** in wealth. This concentration of wealth among a small fraction of the population highlights significant disparities in global wealth distribution.
+
+Looking ahead, projections suggest that global wealth will continue to grow. The **Credit Suisse Global Wealth Report 2021** anticipated a **39% increase** in global wealth over five years, potentially reaching **$583 trillion by 2025**. This growth is expected to be driven by factors such as economic development in emerging markets and the accumulation of assets by the middle class.
+
 ## US Public Debt as of April 30th, 2025
 
 | Security Class                               | Debt Held by Public ($M) | Intragovernmental Holdings ($M) | Total Public Debt Outstanding ($M) |
@@ -29,10 +37,18 @@
   Long-term securities with maturities of 20 or 30 years. Pay semiannual interest.
 
 - **Treasury Inflation-Protected Securities (TIPS)**  
-  Bonds that adjust their principal based on changes in the Consumer Price Index (CPI), offering protection from inflation.
+  Bonds that adjust their principal based on changes in the Consumer Price Index (CPI), offering protection from inflation.  
+  - Interest rate: Fixed  
+  - Principal: Adjusts with inflation (CPI)  
+  - Purpose: Protects against inflation  
+  - Best for: Long-term investors concerned about erosion of purchasing power
 
 - **Floating Rate Notes (FRNs)**  
-  Short- to medium-term securities with interest payments that reset periodically based on short-term interest rates.
+  Short- to medium-term securities with interest payments that reset periodically based on short-term interest rates.  
+  - Interest rate: Floats with 13-week Treasury bill rate  
+  - Principal: Fixed  
+  - Purpose: Protects against rising interest rates  
+  - Best for: Investors seeking exposure to short-term interest rate movements
 
 - **Federal Financing Bank**  
   Debt issued through a government-owned corporation that assists federal agencies in borrowing funds.
@@ -55,6 +71,8 @@
 ---
 
 **Intragovernmental holdings** refer to U.S. Treasury securities held by federal government accounts, such as trust funds for Social Security, Medicare, and military retirement. These accounts invest excess revenues in special-issue Treasury securities, representing internal borrowing within the government.
+
+The term "trust fund" in the context of Social Security refers to a designated accounting mechanism within the U.S. government, not a separate legal entity like a private trust. While it suggests that payroll taxes are set aside for future benefits, the fund is managed by the Treasury and holds special-issue Treasury securities rather than real, segregated assets. Unlike private trusts that are legally separate and bound by fiduciary duties, federal trust funds are part of the government’s internal bookkeeping system. The name “trust fund” is used to signal that revenues are earmarked for specific purposes, like Social Security, but in practice, it operates as an internal ledger within the broader federal budget.
 
 ---
 
