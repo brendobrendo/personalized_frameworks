@@ -6,6 +6,65 @@ The distribution of this wealth is highly uneven. According to the **UBS Global 
 
 Looking ahead, projections suggest that global wealth will continue to grow. The **Credit Suisse Global Wealth Report 2021** anticipated a **39% increase** in global wealth over five years, potentially reaching **$583 trillion by 2025**. This growth is expected to be driven by factors such as economic development in emerging markets and the accumulation of assets by the middle class.
 
+## 🌍 Example: Modeling Change in Global Wealth (Dummy Data)
+
+#### Global Wealth at End of Prior Year (12/31/2024)
+- Starting Global Wealth: **$450 trillion**
+
+---
+
+### 🔧 Components Driving Change in Global Wealth (2025)
+
+#### 1. 📈 Asset Price Growth
+| Asset Class       | Weight in Portfolio | Annual Price Change | Contribution to Wealth Growth |
+|-------------------|---------------------|----------------------|-------------------------------|
+| Equities          | 40%                 | +8%                  | +3.2%                         |
+| Real Estate       | 35%                 | +5%                  | +1.75%                        |
+| Bonds             | 15%                 | +2%                  | +0.30%                        |
+| Other Assets      | 10%                 | 0%                   | 0.00%                         |
+| **Subtotal**      |                     |                      | **+5.25%**                    |
+
+---
+
+#### 2. 💰 Net Savings
+- Global Net Savings Rate: **3% of GDP**
+- World GDP (2025): **$110 trillion**
+- Net Wealth Added via Savings: **$3.3 trillion**
+- Contribution to Wealth: **+0.73%** (3.3 / 450)
+
+---
+
+#### 3. 📉 Currency Effects
+- USD appreciated against other major currencies
+- Resulting reduction in wealth when foreign assets are converted to USD: **–1.5%**
+
+---
+
+#### 4. 📊 Other Adjustments
+| Category                     | Estimated Impact |
+|-----------------------------|------------------|
+| Population Growth            | +1.0%            |
+| Natural Disasters / Losses  | –0.5%            |
+| Measurement Adjustments      | +0.2%            |
+| **Subtotal**                 | **+0.7%**        |
+
+---
+
+### 📊 Total Change in Global Wealth (2025)
+| Component                  | Change (%) |
+|---------------------------|------------|
+| Asset Price Growth        | +5.25%     |
+| Net Savings               | +0.73%     |
+| Currency Effects          | –1.5%      |
+| Other Adjustments         | +0.7%      |
+| **Total Change**          | **+5.18%** |
+
+---
+
+### 🧾 Estimated Global Wealth at End of 2025
+- $450 trillion × (1 + 0.0518) = **~$473.3 trillion**
+
+
 ## US Public Debt as of April 30th, 2025
 
 | Security Class                               | Debt Held by Public ($M) | Intragovernmental Holdings ($M) | Total Public Debt Outstanding ($M) |
