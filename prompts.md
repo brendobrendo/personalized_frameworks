@@ -68,3 +68,9 @@ Both visual softness and a storytelling mood.
 ```
 A traditional painterly technique with a soft impressionistic touch, evoking the feel of mid-20th century gouache or acrylic illustrations. Brushwork is visible but controlled, lending a tactile texture to surfaces without becoming overly abstract. The color palette is muted yet warm, with a slight sepia or sun-washed filter that gives the piece a nostalgic, timeless quality. Lighting is naturalistic but diffused, emphasizing atmosphere over high contrast. Line work is subtly implied rather than overtly drawn, and the figures and forms maintain a stylized simplicity that borders on the cartoonish, while still respecting proportion and volume. The overall composition is balanced and narrative-driven, inviting emotional resonance through its softness and clarity.
 ```
+
+### Symmetric Minimal Futurism
+Balanced structure meets editorial clarity in a tech-forward world.
+```
+A clean, digital illustration style influenced by mid-century modern design and contemporary editorial graphics. The composition is highly symmetrical, with characters and objects mirrored across a central axis to emphasize duality and contrast. Flat color fills and soft gradients replace texture and brushwork, lending a crisp, vector-like appearance that feels both polished and deliberate. The muted color palette leans warm and neutral, favoring subtle harmony over bold contrast. Lighting is soft and evenly distributed, with minimal shadowing used to suggest depth without realism. Characters are rendered in a stylized, geometric manner, more detailed than the understated background but still simplified and approachable. The overall tone is contemplative and quiet, evoking a gentle reflection on human-technology coexistence through a minimalist, structured lens.
+```
