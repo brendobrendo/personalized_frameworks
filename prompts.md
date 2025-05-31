@@ -23,3 +23,8 @@ Input:
  - References to specific musical and lyrical elements.  
  - A short bullet list summarizing key triggers for the emotion.  
 ```
+
+## Capture Styling of an Image
+```
+Write me a paragraph description of the artistic styling of this image. Don't include anything that is in the picture. Only the styling that is used.
+```
