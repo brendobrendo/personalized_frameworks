@@ -74,3 +74,16 @@ Balanced structure meets editorial clarity in a tech-forward world.
 ```
 A clean, digital illustration style influenced by mid-century modern design and contemporary editorial graphics. The composition is highly symmetrical, with characters and objects mirrored across a central axis to emphasize duality and contrast. Flat color fills and soft gradients replace texture and brushwork, lending a crisp, vector-like appearance that feels both polished and deliberate. The muted color palette leans warm and neutral, favoring subtle harmony over bold contrast. Lighting is soft and evenly distributed, with minimal shadowing used to suggest depth without realism. Characters are rendered in a stylized, geometric manner, more detailed than the understated background but still simplified and approachable. The overall tone is contemplative and quiet, evoking a gentle reflection on human-technology coexistence through a minimalist, structured lens.
 ```
+
+### Daydream Illustration
+Painterly storytelling infused with emotional stillness and natural charm.
+```
+A semi-realistic illustration style inspired by classic storybook paintings and impressionistic landscape art. The brushwork is soft and textured, resembling traditional oil or pastel on canvas, with natural blending that gives the scene a gentle, dreamlike finish. The color palette is warm and organic—soft earth tones, subdued blues, and pastel pinks—evoking the seasonal transitions of spring, autumn, and early winter. Composition is calm and spacious, often with a balanced foreground and midground that gently lead the eye toward the horizon. Characters are rendered with simplified but expressive features, always harmonizing with their painterly environments without overpowering them. Backgrounds are rich in ambient detail and light diffusion, with elements like rippling water, swaying trees, or falling snow portrayed in an emotionally resonant, almost musical rhythm. The overall tone is quiet, reflective, and lyrical—capturing the small, profound moments of growth, passage, and connection in a world that feels both nostalgic and timeless.
+```
+
+### The Scribbler's Sketchbook
+```
+Use a simplified, highly stylized cartoon aesthetic with a lighthearted, playful, and almost childlike tone. Characters should feature exaggerated expressions and proportions—such as large eyes, oversized heads, and simplified hands—with bold outlines and clean, confident linework. Apply flat, solid colors with minimal shading to maintain a crisp, graphic look.
+
+The background should be painterly but remain stylistically compatible with the cartoon figures. Use bold, whimsical brushwork with exaggerated curves and a bright, saturated color palette. Employ a slightly flattened perspective to harmonize with the character design and preserve the illustration’s cohesive, storybook-like charm.
+```
