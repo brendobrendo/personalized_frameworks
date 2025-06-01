@@ -75,6 +75,16 @@ Balanced structure meets editorial clarity in a tech-forward world.
 A clean, digital illustration style influenced by mid-century modern design and contemporary editorial graphics. The composition is highly symmetrical, with characters and objects mirrored across a central axis to emphasize duality and contrast. Flat color fills and soft gradients replace texture and brushwork, lending a crisp, vector-like appearance that feels both polished and deliberate. The muted color palette leans warm and neutral, favoring subtle harmony over bold contrast. Lighting is soft and evenly distributed, with minimal shadowing used to suggest depth without realism. Characters are rendered in a stylized, geometric manner, more detailed than the understated background but still simplified and approachable. The overall tone is contemplative and quiet, evoking a gentle reflection on human-technology coexistence through a minimalist, structured lens.
 ```
 
+### Storybook Realism
+Evokes the feeling of a children's book that blends realism and stylized figures.
+```
+Storybook Realism combines a softly textured, semi-realistic painting style for the background with cartoon-style characters in the foreground. The backgrounds should feature naturalistic brushwork—evocative of traditional landscape paintings—with soft lighting, subtle gradients, and atmospheric depth.
+
+Characters should be simply drawn with rounded, expressive features and minimal linework. Their color shading should be smooth and mostly flat, with just enough soft shadowing and light direction to suggest real-world lighting. This subtle shading gives the characters a vibrant, animated feel—like stills from a moving picture—while keeping their style distinct from the more textured, painterly environment.
+
+The overall effect should feel like a modern picture book illustration: grounded yet playful, serene yet full of life.
+``` 
+
 ### Daydream Illustration
 Painterly storytelling infused with emotional stillness and natural charm.
 ```
@@ -83,7 +93,9 @@ A semi-realistic illustration style inspired by classic storybook paintings and 
 
 ### The Scribbler's Sketchbook
 ```
-Use a simplified, highly stylized cartoon aesthetic with a lighthearted, playful, and almost childlike tone. Characters should feature exaggerated expressions and proportions—such as large eyes, oversized heads, and simplified hands—with bold outlines and clean, confident linework. Apply flat, solid colors with minimal shading to maintain a crisp, graphic look.
+Use a simplified, highly stylized cartoon aesthetic with a lighthearted, playful, and almost childlike tone. The texture should mimic traditional paintbrush strokes. Use natural gradients and organic shapes.
 
-The background should be painterly but remain stylistically compatible with the cartoon figures. Use bold, whimsical brushwork with exaggerated curves and a bright, saturated color palette. Employ a slightly flattened perspective to harmonize with the character design and preserve the illustration’s cohesive, storybook-like charm.
+For the cartoon figures use a soft, painterly style with blended shading and gentle gradients. For the characters linework make it minimal.
+
+The background should be painterly but semi-realistic while remaining stylistically compatible with the cartoon figures. Use bold, whimsical brushwork and a bright, saturated color palette. Employ a slightly flattened perspective to harmonize with the character design and preserve the illustration’s cohesive, storybook-like charm.
 ```
