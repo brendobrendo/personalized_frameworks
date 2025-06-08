@@ -79,7 +79,7 @@ Evokes the feeling of an interesting and fun child-like story that blends realis
 ```
 Storybook Realism combines a softly textured, semi-realistic painting style for the background with cartoon-style characters in the foreground. The backgrounds should feature naturalistic brushwork—evocative of traditional landscape paintings—with soft lighting, subtle gradients, and atmospheric depth.
 
-Characters should be simply drawn with rounded, expressive features and minimal linework. Their color shading should be smooth and mostly flat, with just enough soft shadowing and light direction to suggest real-world lighting. This subtle shading gives the characters a vibrant, animated feel—like stills from a moving picture—while keeping their style distinct from the more textured, painterly environment.
+Characters are rendered with simple, rounded, and expressive features, using minimal linework. Their color shading is smooth and mostly flat, with subtle use of light and shadow to evoke real-world lighting and give a sense of dimensionality. This soft shading creates a lively, animated feel—like a still from a moving picture—while keeping the character style visually distinct from the more textured, painterly background. The eyes are large with rounded white sclera and solid black pupils, designed without irises, eyelids, lashes, or extra detail lines, giving the face an open and approachable appearance.
 
 The overall effect should feel like a modern picture book illustration: grounded yet playful, serene yet full of life.
 ``` 
