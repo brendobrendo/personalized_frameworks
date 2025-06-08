@@ -106,83 +106,45 @@ A collection of AI prompts designed to help externalize executive function, redu
 
 ---
 
-## 🧠 1. Get Started When You're Stuck
-
+### Get Started When You're Stuck
 Use when inertia is high and task initiation feels impossible.
+```Give me a 2-minute version of this task that builds momentum.```
+```What’s a warm-up task that helps my brain ease into ...```
 
-- “I want to start ____, but I’m stuck. What’s the lowest-effort first step?”
-- “Give me a 2-minute version of this task that builds momentum.”
-- “What’s a warm-up task that helps my brain ease into ____?”
-
----
-
-## 📝 2. Make a Plan Without Overwhelm
-
+### Make a Plan Without Overwhelm
 Use when you’re spiraling with too many to-dos and no structure.
+```I have these 5 things to do. Help me prioritize them based on urgency and energy.```
+```Make me a plan with 3 focus blocks, each 25 minutes, and breaks in between.```
+```Break this big task into 3 small chunks I can do today, even with low motivation.```
 
-- “I have these 5 things to do. Help me prioritize them based on urgency and energy.”
-- “Make me a plan with 3 focus blocks, each 25 minutes, and breaks in between.”
-- “Break this big task into 3 small chunks I can do today, even with low motivation.”
-
----
-
-## 📌 3. Manage Working Memory and Keep Your Train of Thought
-
+### Manage Working Memory and Keep Your Train of Thought
 Use to stay on track and not lose ideas mid-task.
+```Summarize what I just told you so I can remember it better.```
 
-- “Here’s what I’m thinking about [paste thoughts]. Can you hold this and remind me where I left off later?”
-- “If I get distracted, remind me I was doing this: ____.”
-- “Summarize what I just told you so I can remember it better.”
-
----
-
-## 🧩 4. Reduce Decision Fatigue
-
+### Reduce Decision Fatigue
 Use when everything feels equally urgent or unimportant.
+```I’m overwhelmed by choices. What should I focus on if I only have 30 minutes?```
+```Give me 3 categories for sorting this messy to-do list.```
+```Help me pick one thing to do right now based on low energy and high impact.```
 
-- “I’m overwhelmed by choices. What should I focus on if I only have 30 minutes?”
-- “Give me 3 categories for sorting this messy to-do list.”
-- “Help me pick one thing to do right now based on low energy and high impact.”
-
----
-
-## 🧘‍♂️ 5. Reframe Negative Self-Talk
-
-Use when you feel like a failure or are beating yourself up.
-
-- “I feel guilty about _____. Can you help me reframe it with compassion and context?”
-- “Write a pep talk that acknowledges ADHD is real but reminds me I’m trying.”
-- “What would I say to a friend in my situation? Say that back to me.”
-
----
-
-## 🔄 6. Reflect and Reinforce the Narrative Self
-
+### Reflect and Reinforce the Narrative Self
 Use to connect your actions with your values and identity.
+```What did I do this week that aligned with the kind of person I want to be?```
+```Summarize my strengths based on the last 3 things I accomplished.```
+```Can you help me write a short story of who I am when I’m at my best? At my worst?```
 
-- “What did I do this week that aligned with the kind of person I want to be?”
-- “Summarize my strengths based on the last 3 things I accomplished.”
-- “Can you help me write a short story of who I am when I’m at my best?”
-
----
-
-## 🧠 7. Build an External Brain (Persistent Context Prompts)
-
+### Build an External Brain (Persistent Context Prompts)
 Use to make AI your prosthetic prefrontal cortex.
+```You are my executive function assistant. Your job is to help me stay focused, prioritize, and reflect. I’ll talk to you throughout the day.```
+```Each morning, help me review what’s most important to me and how I want to show up.```
 
-- “You are my executive function assistant. Your job is to help me stay focused, prioritize, and reflect. I’ll talk to you throughout the day.”
-- “I’m going to use you to remember open threads. Here’s one: ____.”
-- “Each morning, help me review what’s most important to me and how I want to show up.”
-
----
-
-## ✅ Optional: Daily Check-In Prompt Template
-
+### Daily Check-In Prompt Template
 Use this as a consistent daily journaling structure.
-
 **Daily Check-In**
-- What’s one thing I’m proud of from yesterday?
-- What’s one priority for today?
-- What’s one way I can be kind to myself?
-- What’s one distraction I want to minimize?
-- What’s one thing that will make me feel accomplished by bedtime?
+```
+What’s one thing I’m proud of from yesterday?  
+What’s one priority for today?  
+What’s one way I can be kind to myself?  
+What’s one distraction I want to minimize?  
+What’s one thing that will make me feel accomplished by bedtime?  
+```
