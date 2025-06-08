@@ -92,8 +92,12 @@ A collection of AI prompts designed to help externalize executive function, redu
 
 ### Get Started When You're Stuck
 Use when inertia is high and task initiation feels impossible.
-```Give me a 2-minute version of this task that builds momentum.```
-```What’s a warm-up task that helps my brain ease into ...```
+```
+Give me a 2-minute version of this task that builds momentum.
+```
+```
+What’s a warm-up task that helps my brain ease into ...
+```
 
 ### Make a Plan Without Overwhelm
 Use when you’re spiraling with too many to-dos and no structure.
