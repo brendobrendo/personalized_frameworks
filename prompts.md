@@ -31,7 +31,6 @@ Write me a paragraph description of the artistic styling of this image. Don't in
 
 ## Capture Styling of an Image 2
 ```
-
 You are a professional prompt engineer specializing in image generation.  
 Your task is to analyze a reference image and extract its visual styling into a structured template that can be reused to generate new images in the same aesthetic.  
 Be descriptive, precise, and avoid referencing specific objects or content from the original image — focus only on the style.
@@ -76,7 +75,7 @@ A clean, digital illustration style influenced by mid-century modern design and 
 ```
 
 ### Storybook Realism
-Evokes the feeling of a children's book that blends realism and stylized figures.
+Evokes the feeling of an interesting and fun child-like story that blends realism and stylized figures.
 ```
 Storybook Realism combines a softly textured, semi-realistic painting style for the background with cartoon-style characters in the foreground. The backgrounds should feature naturalistic brushwork—evocative of traditional landscape paintings—with soft lighting, subtle gradients, and atmospheric depth.
 
@@ -84,21 +83,6 @@ Characters should be simply drawn with rounded, expressive features and minimal 
 
 The overall effect should feel like a modern picture book illustration: grounded yet playful, serene yet full of life.
 ``` 
-
-### Daydream Illustration
-Painterly storytelling infused with emotional stillness and natural charm.
-```
-A semi-realistic illustration style inspired by classic storybook paintings and impressionistic landscape art. The brushwork is soft and textured, resembling traditional oil or pastel on canvas, with natural blending that gives the scene a gentle, dreamlike finish. The color palette is warm and organic—soft earth tones, subdued blues, and pastel pinks—evoking the seasonal transitions of spring, autumn, and early winter. Composition is calm and spacious, often with a balanced foreground and midground that gently lead the eye toward the horizon. Characters are rendered with simplified but expressive features, always harmonizing with their painterly environments without overpowering them. Backgrounds are rich in ambient detail and light diffusion, with elements like rippling water, swaying trees, or falling snow portrayed in an emotionally resonant, almost musical rhythm. The overall tone is quiet, reflective, and lyrical—capturing the small, profound moments of growth, passage, and connection in a world that feels both nostalgic and timeless.
-```
-
-### The Scribbler's Sketchbook
-```
-Use a simplified, highly stylized cartoon aesthetic with a lighthearted, playful, and almost childlike tone. The texture should mimic traditional paintbrush strokes. Use natural gradients and organic shapes.
-
-For the cartoon figures use a soft, painterly style with blended shading and gentle gradients. For the characters linework make it minimal.
-
-The background should be painterly but semi-realistic while remaining stylistically compatible with the cartoon figures. Use bold, whimsical brushwork and a bright, saturated color palette. Employ a slightly flattened perspective to harmonize with the character design and preserve the illustration’s cohesive, storybook-like charm.
-```
 
 # ADHD-Friendly Prompt Library
 
