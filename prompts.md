@@ -101,30 +101,54 @@ What’s a warm-up task that helps my brain ease into ...
 
 ### Make a Plan Without Overwhelm
 Use when you’re spiraling with too many to-dos and no structure.
-```I have these 5 things to do. Help me prioritize them based on urgency and energy.```
-```Make me a plan with 3 focus blocks, each 25 minutes, and breaks in between.```
-```Break this big task into 3 small chunks I can do today, even with low motivation.```
+```
+I have these 5 things to do. Help me prioritize them based on urgency and energy.
+```
+```
+Make me a plan with 3 focus blocks, each 25 minutes, and breaks in between.
+```
+```
+Break this big task into 3 small chunks I can do today, even with low motivation.
+```
 
 ### Manage Working Memory and Keep Your Train of Thought
 Use to stay on track and not lose ideas mid-task.
-```Summarize what I just told you so I can remember it better.```
+```
+Summarize what I just told you so I can remember it better.
+```
 
 ### Reduce Decision Fatigue
 Use when everything feels equally urgent or unimportant.
-```I’m overwhelmed by choices. What should I focus on if I only have 30 minutes?```
-```Give me 3 categories for sorting this messy to-do list.```
-```Help me pick one thing to do right now based on low energy and high impact.```
+```
+I’m overwhelmed by choices. What should I focus on if I only have 30 minutes?
+```
+```
+Give me 3 categories for sorting this messy to-do list.
+```
+```
+Help me pick one thing to do right now based on low energy and high impact.
+```
 
 ### Reflect and Reinforce the Narrative Self
 Use to connect your actions with your values and identity.
-```What did I do this week that aligned with the kind of person I want to be?```
-```Summarize my strengths based on the last 3 things I accomplished.```
-```Can you help me write a short story of who I am when I’m at my best? At my worst?```
+```
+What did I do this week that aligned with the kind of person I want to be?
+```
+```
+Summarize my strengths based on the last 3 things I accomplished.
+```
+```
+Can you help me write a short story of who I am when I’m at my best? At my worst?
+```
 
 ### Build an External Brain (Persistent Context Prompts)
 Use to make AI your prosthetic prefrontal cortex.
-```You are my executive function assistant. Your job is to help me stay focused, prioritize, and reflect. I’ll talk to you throughout the day.```
-```Each morning, help me review what’s most important to me and how I want to show up.```
+```
+You are my executive function assistant. Your job is to help me stay focused, prioritize, and reflect. I’ll talk to you throughout the day.
+```
+```
+Each morning, help me review what’s most important to me and how I want to show up.
+```
 
 ### Daily Check-In Prompt Template
 Use this as a consistent daily journaling structure.
