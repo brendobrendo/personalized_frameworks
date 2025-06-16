@@ -160,3 +160,105 @@ What’s one way I can be kind to myself?
 What’s one distraction I want to minimize?  
 What’s one thing that will make me feel accomplished by bedtime?  
 ```
+# Coding
+Pillars for evaluating a codebase
+1. Performance 
+  - Does the code perform well under expected load? Are there obvious performance bottlenecks?
+  - Runtime
+  - Memory 
+  - Resource usage
+2. Security
+  - Are inputs validated and outputs sanitized?
+  - Are secrets stored safely?
+  - Are external dependencies up to date?
+3. Modularity
+  - Can modules be used in other contexts?
+  - Are dependencies between modules **minimal and intentional**?
+  - Would a new teammate understand the boundaries between components?
+4. Functionality
+  - Does the code do what it's supposed to?
+  - Are edge cases and error states handled well?
+  - Are there unexpected side effects or silent falilures?
+5. Testing
+  - What types of tests are present? (Unit, integration, end-to-end?)
+  - Are the tests fast, reliable, and easy to understand?
+  - Does the test coverage match the most critical paths in the code?
+6. Readability
+  - Would someone new to the repo understand what this function does?
+  - Are names (functions, variables, files) **descriptive without being verbose**? ⭐
+  - Is there **consistent formatting** and commenting where needed?
+
+```
+CODEBASE EVALUATION RUBRIC
+1. Efficiency
+  - Guiding questions:
+    - Does the code perform well under expected load?
+    - Are there obvious performance bottlenecks?
+  - Scoring (1-4):
+    1. Slow or wasteful; no profiling or optimization
+    2. Some slow areas; inefficient patterns used
+    3. Generally performant; optimized for common use
+    4. Fast and scalable; known hot paths are optimized
+2. Security
+  - Guiding questions:
+    - Are inputs validated?
+    - Are secrets protected?
+    - Are common vulnerabilities accounted for?
+  - Scoring (1-4):
+    1. No security considerations; vulnerable code present
+    2. Some secure practices, but gaps exist
+    3. Follows basic security hygiene; minimal risk
+    4. Secure by design; proactively prevents misuse or attack
+3. Modularity
+  - Guiding questions:
+    - Are responsibilities well-separated?
+    - Can code be reused or maintained easily?
+  - Scoring (1-4):
+    1. Large, monolithic chunks; tight coupling
+    2. Some separation, but code reuse is hard
+    3. Clear modules with good boundaries
+    4. High cohesion and loose coupling; excellent reuse potential
+4. Functionality
+  - Guiding questions:
+    - Does the code meet its requirements?
+    - Are edge cases handled?
+  - Scoring (1-4):
+    1. Fails in core functionality or obvious edge cases
+    2. Works for main cases; some bugs or gaps
+    3. Works reliably with decent coverage
+    4. Robust and comprehensive; handles edge cases gracefully
+5. Testing
+  - Guiding questions:
+    - Are there meaningful, reliable tests?
+    - What kinds of tests are present?
+  - Scoring (1-4):
+    1. Few or no tests; hard to change code safely
+    2. Basic tests exist; some are flaky or outdated
+    3. Good coverage with unit and integration tests
+    4. Fast, reliable, comprehensive suit with coverage for critical paths
+6. Readability
+  - Guiding questions:
+    - Is the code easy to understand?
+    - Are names, structure, and formatting clear?
+  - Scoring:
+    1. Confusing structure; poor naming and formatting
+    2. Understandable with effort; inconsistent style
+    3. Clear, consistent, and well-structured
+    4. Self-explanatory; minimal need for comments; welcoming to new devs
+  
+SCORING TEMPLATE
+  - Efficiency: [1-4]
+  - Security: [1-4]
+  - Modularity: [1-4]
+  - Functionality: [1-4]
+  - Testing: [1-4]
+  - Readability: [1-4]
+  Total Score: [Sum of above, max = 24]  
+
+INTERPRETATION GUIDE
+  - 20-24: Excellent — high-quality and production-ready.
+  - 15-19: Solid — good structure with some improvement areas.
+  - 10-14: Needs work — risk of tech debt or fragility.
+  - <10: Warning — revisit before scaling or extending.
+```
+
