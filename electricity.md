@@ -13,7 +13,16 @@ This framework is designed to deepen my understanding of electricity, including 
 - **Direct Current (DC)**: An electric current that flows in one direction only, maintaining a constant voltage.
 
 ---
+## ⚡ Bicycle Analogy for Direct Current (DC)
 
+| **Electrical Concept** | **Bicycle Analogy** | **Explanation** |
+|------------------------|---------------------|-----------------|
+| **Voltage (V)** | **Gear selection** | The gear determines how much *force* is applied per pedal stroke. A higher gear means more force per turn — like higher voltage pushing harder on each electron. A lower gear is gentler, like lower voltage. |
+| **Current (I)** | **Rate of rotation (revolutions) of the chain or wheels per second** | Current represents the *rate of flow* of charge. The faster the chain (or wheels) spins, the more “charge” passes per unit time. |
+| **Resistance (R)** | **Slope or friction** | Going uphill or having sticky bearings resists motion, just like resistance opposes current flow. |
+| **Power (P = V × I)** | **Speed or overall effort of the cyclist** | Combining a high gear (voltage) *and* fast spinning (current) results in greater total power output — the cyclist goes faster or exerts more effort. |
+
+---
 ## Gaps in My Understanding
 
 ### What is a good analogy for understanding voltage and how it differs from water pressure in a fire hose?
