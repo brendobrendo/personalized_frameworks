@@ -73,7 +73,60 @@ When explaining or recommending, **link your statements to something they said**
 
 ---
 
-If you want, I can also generate a **Google Tasks batch upload snippet** for these goals to seamlessly integrate into your system.
+```typescript
+import { IBATransactionLegacy } from "../types/legacy/baTransaction";
+import { ICheckingAccountTransactionDb } from "../types/db/checking";
+
+export function dbToLegacyBATransaction(
+  t: ICheckingAccountTransactionDb
+): IBATransactionLegacy {
+  return {
+    _id: t.id,
+    asterisk_field: t.posted_flag ?? "",
+    blank_field: t.raw_reference ? Number(t.raw_reference) : 0, // see note below
+    credit_card_balance: null,
+    bank_account_balance: null,
+
+    transaction_amount: t.amount,
+
+    // if it’s a check, raw_reference may be a number; otherwise it might be junk
+    check_number: t.raw_reference && /^\d+$/.test(t.raw_reference) ? Number(t.raw_reference) : 0,
+
+    transaction_date: t.transaction_date,
+    transaction_description: t.raw_description,
+
+    type_of_transaction: t.type_of_transaction ?? "unknown",
+
+    merchant: t.merchant_name ?? null,
+
+    my_classification: null,
+    my_description: null,
+    other_notes: null,
+
+    receipt: null,
+  };
+}
+```
+
+**Step 3: Change the API layer to return the new DB shape but keep the UI consuming legacy**
+Type the API response as ICheckingAccountTransactionDb[]
+
+Immediately map to legacy with the adapter
+
+Return legacy to the rest of the app
+
+```typescript
+import { dbToLegacyBATransaction } from "../adapters/checkingTransactionAdapter";
+import { ICheckingAccountTransactionDb } from "../types/db/checking";
+import { IBATransactionLegacy } from "../types/legacy/baTransaction";
+
+export async function fetchBATransactions(): Promise<IBATransactionLegacy[]> {
+  const res = await fetch("/api/wf/checking/transactions");
+  const data: ICheckingAccountTransactionDb[] = await res.json();
+  return data.map(dbToLegacyBATransaction);
+}
+```
+
 
 
 
