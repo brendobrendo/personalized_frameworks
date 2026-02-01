@@ -300,7 +300,26 @@ for transaction in transactions:
 
 This block defines how your system derives a user’s *current credit card balance* from historical data. Any error here directly impacts financial accuracy, reporting, and trust in downstream dashboards. It is the conceptual bridge between static statement data and real-time transaction activity.
 
-## React Typescript ##
+## React Typescript mismatch between old and new interface structures ##
+### New Interface Structure ###
+```typescript
+export interface ICreditCardTransaction {
+    _id: string;
+    asterisk_field: string;
+    blank_field: number;
+    credit_card_balance: number | null;
+    my_classification: string | null;
+    my_description: string | null;
+    transaction_amount: number;
+    transaction_date: string;
+    transaction_description: string;
+    type_of_transaction: string;
+    merchant: string;
+    other_notes: string | null;
+    receipt: IReceipt | null;
+}
+```
+### Legacy Interface Structure ###
 ```typescript
 export interface ICCTransaction {
     _id: string;
@@ -318,3 +337,5 @@ export interface ICCTransaction {
     receipt: IReceipt | null;
 }
 ```
+
+# Wells Fargo Checking Account Data Ingestion Process #
