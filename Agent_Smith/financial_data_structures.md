@@ -157,7 +157,7 @@ At a high level, this module:
 
 ---
 
-## Major parts of the module ##
+### Major parts of the module ###
 
 ### 1. Database and collection setup ###
 
@@ -302,7 +302,146 @@ for transaction in transactions:
 
 This block defines how your system derives a user’s *current credit card balance* from historical data. Any error here directly impacts financial accuracy, reporting, and trust in downstream dashboards. It is the conceptual bridge between static statement data and real-time transaction activity.
 
+This Python file defines the Flask route and supporting logic for **reading Wells Fargo credit card transaction data from Postgres and exposing it via an HTTP API**. It serves as the boundary between the `wells_fargo_credit_card_transactions` database table and any frontend, service, or MCP client consuming the `/credit_card_transactions` endpoint.
+
+At a high level, this file is responsible for:
+
+- Querying credit card transaction records from Postgres
+- Converting database rows into JSON-serializable objects
+- Returning structured transaction data over HTTP
+- Handling errors and ensuring database sessions are properly closed
+
+---
+
+## Major parts of the script
+
+### 1. Imports and dependencies
+
+#### Dependencies: ####
+
+- **Flask** handles request parsing and JSON responses.
+- **SQLAlchemy `text` queries** are used instead of ORM models for explicit control.
+- **`get_db_session()`** abstracts Postgres connection management.
+- **Flask Blueprint** cleanly namespaces the credit card routes.
+- **Centralized logging** captures runtime and query errors.
+
+---
+
+### 2. Row serialization helper (`row_to_dict`)
+
+```python
+def row_to_dict(row):
+    """Convert a SQLAlchemy row to a dictionary with serializable values."""
+```
+
+This helper function converts a raw SQLAlchemy result row into a JSON-safe dictionary:
+
+- UUIDs are cast to strings
+- Dates and timestamps are converted to ISO-8601 strings
+- Numeric values are explicitly cast to floats
+- Nullable foreign keys are handled defensively
+
+This function defines the **API contract** for credit card transactions and cleanly separates database representation from response format.
+
+---
+
+### 3. Route definition (`GET /credit_card_transactions`)
+
+```python
+@credit_card_routes_bp.route('/credit_card_transactions', methods=['GET'])
+def get_all_transactions():
+```
+
+This route:
+
+- Accepts an optional `limit` query parameter
+- Queries the `wells_fargo_credit_card_transactions` table
+- Orders results by `transaction_date` (most recent first)
+- Serializes each row into a dictionary
+- Returns the result as JSON
+
+Raw SQL is used deliberately to keep query behavior predictable and transparent.
+
+---
+
+### 4. Query construction and execution
+
+```python
+query = """
+    SELECT * FROM wells_fargo_credit_card_transactions
+    ORDER BY transaction_date DESC
+"""
+if limit is not None:
+    query += " LIMIT :limit"
+    result = db.execute(text(query), {"limit": limit})
+```
+
+This logic:
+
+- Adds a `LIMIT` clause only when requested
+- Uses bound parameters to prevent SQL injection
+- Keeps SQL readable and easy to debug
+
+---
+
+### 5. Error handling and cleanup
+
+```python
+except Exception as e:
+    logger.error(f"Error in /credit_card_transactions endpoint: {e}")
+    return jsonify({"error": str(e)}), 500
+finally:
+    db.close()
+```
+
+This ensures:
+
+- Errors are logged with useful context
+- Clients receive meaningful HTTP 500 responses on failure
+- Database connections are always released
+
+This pattern prevents connection leaks and silent failures.
+
+---
+
+## Most important part of the code
+
+The most critical section of this file is the **row serialization and schema alignment layer**:
+
+```python
+transactions = [row_to_dict(row) for row in result]
+```
+
+This line is where:
+
+- Database schema meets the API contract
+- Column names must match exactly
+- Data types are normalized for downstream consumers
+
+Any mismatch here immediately breaks the endpoint, making this the most fragile and important seam in the system.
+
+---
+
+## Important note
+
+The route currently returns a placeholder response:
+
+```python
+return jsonify({'value': 'hello world'})
+```
+
+Once development testing is complete, this should be replaced with:
+
+```python
+return jsonify(transactions)
+```
+
+to return the actual transaction data.
+
+---
+
 ## React Typescript mismatch between old and new interface structures ##
+
 The legacy interface was pulling data downstream from a mongodb and the new interface is pulling data from postgres- hence the difference in the id key names- '_id' vs 'id'. Other differences: 
 
 I also think I can take out the 'asterisk_field' and 'blank_field' keys from each because they are not used in the React code. I also think I can take out the 'credit_card_balance' key from both because that is not being used and I think I will find a different way of implementing the balance calculation by having a separate table for credit card statements.
