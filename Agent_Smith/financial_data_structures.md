@@ -142,257 +142,164 @@ The `wells_fargo_credit_card_transactions` table lives in the `public` schema an
 | Schema         | public |
 | Access Method  | Heap   |
 
-## Flask code ##
+## Flask routes and method logic ##
 
-### Code snippet from Agent Smith Flask for reading cc data from postgres ###
+This module defines the Flask routes and supporting logic for reading, aggregating, and updating credit card transaction data stored in MongoDB. It acts as the API layer between the application frontend and the underlying credit card transaction collections, exposing endpoints for retrieving transactions, querying by date, computing balances, and updating individual records.
+
+At a high level, this module:
+
+1. Connects to MongoDB collections that store credit card transactions and statement periods.
+2. Exposes read-focused API endpoints for transactions and balances.
+3. Performs lightweight aggregation and date-based calculations.
+4. Supports updating individual credit card transactions via REST endpoints.
+
+---
+
+## Major parts of the module ##
+
+### 1. Database and collection setup ###
+
+At import time, the module establishes a connection to MongoDB and initializes references to the relevant collections:
+
+- `CreditCardTransactionsTest` — stores individual credit card transactions.
+- `CreditCardPaymentPeriodsTest` — stores credit card statement periods and balances.
+
+These collections serve as the backing store for all route logic in this file.
+
+---
+
+### 2. Core data access helpers ###
+
+#### `get_all_credit_card_transactions(limit=None)` ####
+
+Fetches credit card transactions from MongoDB, sorted by `transaction_date` in descending order.
+
+- Supports an optional `limit` query parameter.
+- Converts MongoDB `ObjectId` values to strings for JSON serialization.
+- Acts as the primary read path for the `/credit_card_transactions` endpoint.
+
+---
+
+#### `get_transactions_by_date(transaction_date)` ####
+
+Retrieves all transactions that match a specific transaction date.
+
+- Used by the date-filtered API endpoint.
+- Ensures returned documents are JSON-safe by converting `_id` fields.
+
+---
+
+### 3. API routes ###
+
+#### `GET /credit_card_transactions` ####
+
+Returns a list of credit card transactions.
+
+- Accepts an optional `limit` query parameter.
+- Internally calls helper functions to retrieve and serialize transactions.
+- Currently invokes month-based aggregation helpers (useful for analytics or dashboards).
+
+---
+
+#### `GET /credit_card_transactions_by_date` ####
+
+Returns transactions for a specific date.
+
+- Requires a `date` query parameter (`MM/DD/YYYY`).
+- Returns a `400` error if the parameter is missing.
+- Useful for drill-down views and day-level analysis.
+
+---
+
+#### `GET /credit_card_balances_since_last_statement` ####
+
+Returns a daily running balance starting from the most recent credit card statement.
+
+- Uses the last statement’s ending balance as a baseline.
+- Applies all subsequent transactions in chronological order.
+- Returns a list of `{ date, balance }` records suitable for charts or trend analysis.
+
+---
+
+### 4. Date-based aggregation helpers ###
+
+#### `get_current_month_credit_card_transactions()` ####
+
+Fetches transactions that fall within the current calendar month.
+
+- Calculates the start and end of the month dynamically.
+- Filters transactions using string-based date comparisons.
+- Primarily used as input for aggregation logic.
+
+---
+
+#### `sum_transactions_by_day(transactions)` ####
+
+Aggregates a list of transactions by day.
+
+- Groups transactions by `transaction_date`.
+- Computes daily spending totals.
+- Sorts results chronologically.
+- Returns a list of `{ date, daily_total }` objects.
+
+This function is useful for generating daily spend charts or summaries.
+
+---
+
+### 5. Statement and balance logic ###
+
+#### `get_last_credit_card_statement()` ####
+
+Fetches the most recent credit card statement from MongoDB.
+
+- Sorts by `payment_period_end` descending.
+- Converts the statement `_id` to a string for API responses.
+- Acts as a building block for balance calculations.
+
+---
+
+#### `get_credit_card_balance_since_last_statement()` ####
+
+Calculates a running balance starting from the last statement balance.
+
+- Retrieves all transactions after the statement end date.
+- Applies each transaction sequentially.
+- Produces a day-by-day balance history.
+- Returns structured data suitable for time-series visualization.
+
+---
+
+### 6. Update route ###
+
+#### `PUT / PATCH /credit_card_transactions/<transaction_id>` ####
+
+Updates an individual credit card transaction.
+
+- Accepts partial updates via JSON payload.
+- Strips `_id` from the update payload to prevent accidental mutation.
+- Validates the provided `transaction_id`.
+- Returns appropriate error responses if the transaction is not found or input is invalid.
+
+---
+
+### Most important part of the code ###
+
+The most critical logic in this module is the **balance calculation since the last statement**, found in `get_credit_card_balance_since_last_statement()`:
+
 ```python
-import os
-from flask import jsonify, request, make_response
-from app.utils import add_cors_headers
-from app.logging_config import configure_logging
-from pymongo import MongoClient
-from bson.objectid import ObjectId
-from . import credit_card_routes_bp
-import uuid
-from datetime import datetime, timedelta
-from collections import defaultdict
+current_balance = statement_balance
 
-client = MongoClient("mongodb://localhost:27017/")
-db = client['FinancialData']
-credit_card_collection = db['CreditCardTransactionsTest']
-credit_card_statement_collection = db['CreditCardPaymentPeriodsTest']
+for transaction in transactions:
+    transaction_date = datetime.strptime(
+        transaction['transaction_date'], '%m/%d/%Y'
+    ).date()
 
-from app import logger
-
-# Create
-
-# Read
-def get_all_credit_card_transactions(limit=None):
-    try:
-        if limit is not None and isinstance(limit, int):
-            transactions = list(credit_card_collection.find().sort({ "transaction_date": -1 }).limit(limit))
-        else:
-            transactions = list(credit_card_collection.find().sort({ "transaction_date": -1 }).limit(limit))
-        for transaction in transactions:
-            transaction['_id'] = str(transaction['_id'])
-        return transactions
-    except Exception as e:
-        logger.error(f"Error fetching persons: {e}")
-        raise
-
-@credit_card_routes_bp.route('/credit_card_transactions', methods=['GET'])
-def credit_card_transactions():
-    try:
-        sep_transactions = get_current_month_credit_card_transactions()
-        sum_transactions_by_day(sep_transactions)
-        limit = request.args.get('limit', default=None, type=int)
-        transactions = get_all_credit_card_transactions(limit)
-        return jsonify(transactions)
-    except Exception as e:
-        logger.error(f"Error in /credit_card_transactions endpoint: {e}")
-        return jsonify({"error": str(e)}), 500
-
-def get_transactions_by_date(transaction_date):
-    try:
-        # Query the collection to find transactions with the specified date
-        transactions = list(credit_card_collection.find({"transaction_date": transaction_date}))
-
-        # Convert ObjectId to string for JSON serialization
-        for transaction in transactions:
-            transaction['_id'] = str(transaction['_id'])
-
-        return transactions
-    except Exception as e:
-        logger.error(f"Error fetching transactions by date: {e}")
-        raise
-
-@credit_card_routes_bp.route('/credit_card_transactions_by_date', methods=['GET'])
-def credit_card_transactions_by_date():
-    try:
-        # Get the transaction_date from query parameters
-        transaction_date = request.args.get('date')
-
-        # Validate that the date parameter is provided
-        if not transaction_date:
-            return jsonify({"error": "The 'date' query parameter is required"}), 400
-        
-        # Fetch transactions for the specified date
-        transactions = get_transactions_by_date(transaction_date)
-
-        return jsonify(transactions)
-    except Exception as e:
-        logger.error(f"Error in /credit_card_transactions_by_date endpoint: {e}")
-        return jsonify({"error": str(e)}), 500
-    
-def get_current_month_credit_card_transactions():
-    try:
-        # Get the current date and calculate the start and end of the current month
-        now = datetime.now()
-        start_of_month = datetime(now.year, now.month, 1)
-        if now.month == 12:
-            # If December, set end of month to January 1st of the next year
-            end_of_month = datetime(now.year + 1, 1, 1)
-        else:
-            # Otherwise, set end of month to the first of the next month
-            end_of_month = datetime(now.year, now.month +1, 1)
-
-        # Query transactions that fall within the current month
-        transactions = list(credit_card_collection.find({
-            "transaction_date": {
-                "$gte": start_of_month.strftime("%m/%d/%Y"),
-                "$lte": end_of_month.strftime("%m/%d/%Y")
-            }
-        }))
-
-        # Convert ObjectId to string for each transaction
-        for transaction in transactions:
-            transaction['_id'] = str(transaction['_id'])
-
-        return transactions
-    
-    except Exception as e:
-        print(f"Error fetching the current month's credit card transactions: {e}")
-        return []
-    
-def sum_transactions_by_day(transactions):
-    # Dictionary to hold the sum of transactions for each date
-    daily_sums = defaultdict(float)
-
-    for transaction in transactions:
-        # Extract the date and amount from each transaction
-        date_str = transaction['transaction_date']
-        amount = transaction['transaction_amount']
-
-        # Sum the transaction amounts per date
-        daily_sums[date_str] += amount
-
-    # Convert the daily_sums dictionary to a list of dictionaries
-    summed_transactions = [
-        {'date': date, 'daily_total': total}
-        for date, total in daily_sums.items()
-    ]
-
-    # Sort the list by date
-    summed_transactions.sort(
-        key=lambda x: datetime.strptime(x['date'], '%m/%d/%Y')
-    )
-
-    print(summed_transactions)
-    return summed_transactions
-    
-def get_last_credit_card_statement():
-    try:
-        last_statement = credit_card_statement_collection.find_one(
-            sort=[("payment_period_end", -1)]
-        )
-
-        # Convert the MongoDB ObjectId to a string for the response
-        if last_statement:
-            last_statement['_id'] = str(last_statement['_id'])
-        else:
-            return jsonify({"error": "No credit card statements found"}), 404
-        
-        print(last_statement)
-        return jsonify(last_statement), 200
-    
-    except Exception as e:
-        logger.error(f"Error fetching the last credit card statement: {e}")
-        return jsonify({"error": str(e)}), 500
-    
-def get_credit_card_balance_since_last_statement():
-    try:
-
-        # Fetch the most recent credit card statement
-        last_statement = credit_card_statement_collection.find_one(
-            sort=[("payment_period_end", -1)]
-        )
-
-        if not last_statement:
-            return jsonify({"error": "No credit card statements found."}), 404
-        
-        # Extract necessary details from the last statement
-        last_statement_end_date = datetime.strptime(last_statement['payment_period_end'], '%m/%d/%Y')
-        print(last_statement_end_date)
-        statement_balance = last_statement['statement_balance']
-        print(statement_balance)
-
-        # Fetch all transactions that occurred after the end of the last statement period
-        transactions = list(
-            credit_card_collection.find({
-                "transaction_date": {
-                    "$gt": last_statement_end_date.strftime('%m/%d/%Y')
-                }
-            }).sort("transaction_date", 1) # sort in ascending order by date
-        )
-
-        print('TRANSACTIONS: ', transactions)
-
-        # Group transactions by day and calculate the running balance
-        daily_balances = defaultdict(float)
-        current_balance = statement_balance
-
-        # Iterate over transactions and group them by day
-        for transaction in transactions:
-            # Convert string transaction_date to datetime object
-            transaction_date = datetime.strptime(transaction['transaction_date'], '%m/%d/%Y').date()
-
-            # Subtract transaction amount from current balance
-            current_balance -= transaction['transaction_amount']
-
-            # Store the balance for each day
-            daily_balances[transaction_date] = current_balance
-
-        # Prepare the output: a list of dates and their corresponding balances
-        balance_history = [{"date": str(date), "balance": balance} for date, balance in sorted(daily_balances.items())]
-
-        return balance_history
-    
-    except Exception as e:
-        logger.error(f"Error fetching transactions from the last week: {e}")
-        raise
-
-@credit_card_routes_bp.route('/credit_card_balances_since_last_statement', methods=['GET'])
-def credit_card_balances_since_last_statment():
-    try:
-        balances = get_credit_card_balance_since_last_statement()
-        return jsonify(balances)
-    except Exception as e:
-        logger.error(f"Error in /credit_card_transactions_last_week endpoint: {e}")
-        return jsonify({"error": str(e)}), 500
-    
-# Update
-@credit_card_routes_bp.route('/credit_card_transactions/<transaction_id>', methods=['PUT', 'PATCH'])
-def update_credit_card_transaction(transaction_id):
-    try:
-        updates = request.json
-        if not updates:
-            return jsonify({"error": "No update data provided"}), 400
-        
-        # Remove the '_id' field from updates if it exists
-        if '_id' in updates:
-            del updates['_id']
-        
-        # Convert transaction_id to ObjectId
-        try:
-            transaction_id = ObjectId(transaction_id)
-        except Exception as e:
-            return jsonify({"error": f"Invalid transaction ID: {e}"}), 400
-        
-        # Perform the update
-        result = credit_card_collection.update_one(
-            {"_id": transaction_id},
-            {"$set": updates}
-        )
-
-        if result.matched_count == 0:
-            return jsonify({"error": "No transaction found with the provided ID"})
-        
-        return jsonify({"message": "Transaction updated successfully"}), 200
-    
-    except Exception as e:
-        logger.error(f"Error updating transaction: {e}")
-        return jsonify({"error": str(e)}), 500
+    current_balance -= transaction['transaction_amount']
+    daily_balances[transaction_date] = current_balance
 ```
+
+This block defines how your system derives a user’s *current credit card balance* from historical data. Any error here directly impacts financial accuracy, reporting, and trust in downstream dashboards. It is the conceptual bridge between static statement data and real-time transaction activity.
+
 ## React Typescript ##
 ```typescript
 export interface ICCTransaction {
