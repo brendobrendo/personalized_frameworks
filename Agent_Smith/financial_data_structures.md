@@ -1,13 +1,28 @@
-# Wells Fargo Credit Card #
-## CSV structure ##
-```csv
-"01/29/2026","-22.11","*","","OPENAI *CHATGPT SUBSCR OPENAI.COM CA"
-"01/29/2026","-10.48","*","","CHIPOTLE 2575 BELLEVUE WA"
-"01/29/2026","-9.47","*","","MCDONALD'S F10651 BELLEVUE WA"
-"01/28/2026","-9.47","*","","MCDONALD'S F10651 BELLEVUE WA"
-```
-## Ingestion process ##
+# Wells Fargo Credit Card Data Ingestion Process #
+
 Data ingestion begins by downloading a CSV file of recent Wells Fargo credit card transactions to my local machine. A script then parses this CSV and uploads the records into the Postgres database. Once stored, the data can be accessed by the Flask backend via standard database queries, exposed through API endpoints consumed by the React app, and ultimately made available through MCP tools, including interaction from clients like Claude Code.
+
+## CSV structure
+
+Card activity data is downloaded as a CSV file from the Wells Fargo web platform. When exporting the data, I can select a start and end date, with a maximum historical range of 120 days.
+
+Each row in the CSV contains five values. Wells Fargo does not publish formal documentation describing the schema, so some fields are inferred based on observed patterns.
+
+- **Column 1** appears to be the transaction date, formatted as `MM/DD/YYYY`.
+- **Column 2** is the transaction amount, where charges are represented as negative values and payments as positive values.
+- **Column 3** consistently contains the value `"*"`.
+- **Column 4** is consistently an empty string.
+- **Column 5** is a free-form transaction description, typically including the merchant name and location.
+
+An example of the exported CSV data is shown below:
+```csv
+"01/05/2026","-21.77","*","","MADRONA GROCERY OUT SEATTLE WA"
+"01/04/2026","2378.01","*","","AUTOMATIC PAYMENT - THANK YOU"
+"01/04/2026","-4.26","*","","STARBUCKS STORE 03702 SEATTLE WA"
+"01/04/2026","-13.68","*","","BERT'S RED APPLE SEATTLE WA"
+"01/03/2026","-15.48","*","","OXBOW SEATTLE WA"
+```
+
 ## Postgres table ##
 
 The `wells_fargo_credit_card_transactions` table lives in the `public` schema and stores individual credit card transactions from Wells Fargo. Each row represents a single transaction and includes both required transactional fields and optional normalization metadata.
