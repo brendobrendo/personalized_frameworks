@@ -142,9 +142,11 @@ The `wells_fargo_credit_card_transactions` table lives in the `public` schema an
 | Schema         | public |
 | Access Method  | Heap   |
 
-## Flask routes and method logic ##
+## Legacy Flask routes and method logic ##
 
-This module defines the Flask routes and supporting logic for reading, aggregating, and updating credit card transaction data stored in MongoDB. It acts as the API layer between the application frontend and the underlying credit card transaction collections, exposing endpoints for retrieving transactions, querying by date, computing balances, and updating individual records.
+This explains the legacy and discarded Flask routes and supporting logic for reading, aggregating, and updating credit card transaction data stored in MongoDB. It acts as the API layer between the application frontend and the underlying credit card transaction collections, exposing endpoints for retrieving transactions, querying by date, computing balances, and updating individual records.
+
+I am keepin a description of the legacy functionaliy and workflow so that I can build it into my new routes and method logic that use the Postgres database.
 
 At a high level, this module:
 
@@ -301,10 +303,15 @@ for transaction in transactions:
 This block defines how your system derives a user’s *current credit card balance* from historical data. Any error here directly impacts financial accuracy, reporting, and trust in downstream dashboards. It is the conceptual bridge between static statement data and real-time transaction activity.
 
 ## React Typescript mismatch between old and new interface structures ##
+The legacy interface was pulling data downstream from a mongodb and the new interface is pulling data from postgres- hence the difference in the id key names- '_id' vs 'id'. Other differences: 
+
+I also think I can take out the 'asterisk_field' and 'blank_field' keys from each because they are not used in the React code. I also think I can take out the 'credit_card_balance' key from both because that is not being used and I think I will find a different way of implementing the balance calculation by having a separate table for credit card statements.
+
+
 ### New Interface Structure ###
 ```typescript
 export interface ICreditCardTransaction {
-    _id: string;
+    id: string; // 
     asterisk_field: string;
     blank_field: number;
     credit_card_balance: number | null;
