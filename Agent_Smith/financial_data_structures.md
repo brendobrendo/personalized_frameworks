@@ -2,7 +2,7 @@
 
 Data ingestion begins by downloading a CSV file of recent Wells Fargo credit card transactions to my local machine. A script then parses this CSV and uploads the records into the Postgres database. Once stored, the data can be accessed by the Flask backend via standard database queries, exposed through API endpoints consumed by the React app, and ultimately made available through MCP tools, including interaction from clients like Claude Code.
 
-## CSV structure
+## CSV structure ##
 
 Card activity data is downloaded as a CSV file from the Wells Fargo web platform. When exporting the data, I can select a start and end date, with a maximum historical range of 120 days.
 
@@ -22,6 +22,91 @@ An example of the exported CSV data is shown below:
 "01/04/2026","-13.68","*","","BERT'S RED APPLE SEATTLE WA"
 "01/03/2026","-15.48","*","","OXBOW SEATTLE WA"
 ```
+
+## CSV Parser script ##
+This script automates the ingestion of Wells Fargo credit card transaction data from a locally downloaded CSV file into a PostgreSQL database. Its primary purpose is to take a raw, undocumented CSV export from the Wells Fargo website, apply minimal but necessary parsing, and persist the data in the `wells_fargo_credit_card_transactions` table for downstream use by the application.
+
+At a high level, the script:
+
+1. Locates a Wells Fargo credit card CSV file in the user’s `Downloads` folder.
+2. Parses dates and amounts into strongly typed Python values.
+3. Transforms each CSV row into a database-ready transaction record.
+4. Inserts all transactions into PostgreSQL in a single batch.
+5. Deletes the CSV file after a successful import to prevent duplicate ingestion.
+
+---
+
+### Major parts of the script ###
+
+### 1. CSV discovery (`find_csv_file`) ###
+
+This function searches for files matching `CreditCard*.csv` in the user’s `~/Downloads` directory.
+
+- If no matching file is found, the script exits cleanly.
+- If multiple matching files are found, the user is prompted to choose which file to import.
+
+This approach keeps the workflow simple and compatible with manual downloads, without hard-coding file paths.
+
+---
+
+### 2. Parsing helpers (`parse_date`, `parse_amount`) ###
+
+These helper functions handle the quirks of Wells Fargo’s CSV format:
+
+- **`parse_date`** converts `MM/DD/YYYY` strings into Python `date` objects.
+- **`parse_amount`** removes currency symbols and commas, then converts values to floats, preserving Wells Fargo’s sign convention (charges are negative, payments are positive).
+
+Centralizing this logic ensures consistent typing before data reaches the database.
+
+---
+
+### 3. Database import logic (`import_transactions`) ###
+
+This function contains the core ingestion logic:
+
+- Establishes a PostgreSQL connection using environment variables for credentials.
+- Reads the CSV file row by row (the Wells Fargo export does not include headers).
+- Maps each row into a structured transaction tuple aligned with the database schema.
+- Accumulates valid rows in memory.
+- Performs a single batch insert using `execute_values` for efficiency.
+- Commits the transaction and reports how many rows were imported.
+
+Malformed rows are skipped with a logged error, allowing the import to continue without failing entirely.
+
+---
+
+### 4. Cleanup and error handling ###
+
+After a successful import:
+
+- The CSV file is deleted to avoid accidental re-imports.
+- The database connection is closed cleanly.
+
+If an error occurs during import:
+
+- The transaction is rolled back.
+- The exception is raised so failures are visible and actionable.
+
+---
+
+### Most important part of the code ###
+
+The most critical section of the script is the row-transformation logic inside `import_transactions`, where raw CSV data is converted into schema-aligned records:
+
+```python
+transaction = (
+    parse_date(row[0]),           # transaction_date
+    parse_amount(row[1]),         # amount
+    row[2] if row[2] else None,   # posted_flag
+    row[3] if row[3] else '',     # raw_reference
+    row[4],                       # raw_merchant
+    None,  # merchant_id (set later by application logic)
+    None   # category_id (set later by application logic)
+)
+transactions.append(transaction)
+```
+
+This block is responsible for data integrity. Any error here propagates directly into the database and affects downstream reconciliation, normalization, and analytics. The subsequent batch insert via `execute_values` is equally important, as it ensures the import is fast, atomic, and scalable.
 
 ## Postgres table ##
 
@@ -58,137 +143,7 @@ The `wells_fargo_credit_card_transactions` table lives in the `public` schema an
 | Access Method  | Heap   |
 
 ## Flask code ##
-### Script for taking csv data and uploading to postgres ###
-```python
-#!/usr/bin/env
 
-"""
-Import Wells Fargo credit card transactions from CSV to PostgreSQL
-"""
-import csv
-import os
-import sys
-from pathlib import Path
-from datetime import datetime
-import psycopg2
-from psycopg2.extras import execute_values
-
-def find_csv_file():
-    """Find CSV file in Downloads directory."""
-    downloads = Path('~/Downloads').expanduser()
-    csv_files = list(downloads.glob('CreditCard*.csv'))
-
-    if not csv_files:
-        print(f"No CSV file found in {downloads}")
-        return None
-    
-    if len(csv_files) == 1:
-        return csv_files[0]
-    
-    # Multiple files - let user choose
-    print("Muliple CSV files found:")
-    for i, file in enumerate(csv_files, 1):
-        print(f"{i}. {file.name}")
-
-    choice = int(input("Enter file number: ")) - 1
-    return csv_files[choice]
-
-def parse_amount(amount_str):
-    """Parse amount, handling negative values and currency symbols."""
-    cleaned = amount_str.replace('$', "").replace(',', '').strip()
-    return float(cleaned)
-
-def parse_date(date_str):
-    """Parse date from common formats."""
-    format = '%m/%d/%Y'
-    try:
-        return datetime.strptime(date_str, format).date()
-    except ValueError:
-        raise ValueError(f"Cannot parse date: {date_str}")
-
-def import_transactions(csv_path, db_name='agent_smith'):
-    """Import transactions from CSV to PostgreSQL database."""
-    """Import transactions from CSV to PostgreSQL"""
-    
-    # Connect to PostgreSQL
-    conn = psycopg2.connect(
-        dbname=db_name,
-        user=os.getenv('PGUSER', 'postgres'),
-        password=os.getenv('PGPASSWORD', ''),
-        host=os.getenv('PGHOST', 'localhost'),
-        port=os.getenv('PGPORT', '5432')
-    )
-    
-    try:
-        with open(csv_path, 'r', encoding='utf-8-sig') as f:
-            reader = csv.reader(f)
-
-            # Wells Fargo CSV format (no headers):
-            # Column 0: Date
-            # Column 1: Amount
-            # Column 2: Posted flag (*)
-            # Column 3: Reference (often empty)
-            # Column 4: Merchant/Description
-
-            # Prepare data for batch insert
-            transactions = []
-            for row in reader:
-                try:
-                    if len(row) < 5:
-                        print(f"Skipping row with insufficient columns: {row}")
-                        continue
-
-                    transaction = (
-                        parse_date(row[0]),           # transaction_date
-                        parse_amount(row[1]),         # amount
-                        row[2] if row[2] else None,   # posted_flag
-                        row[3] if row[3] else '',     # raw_reference
-                        row[4],                       # raw_merchant
-                        None,  # merchant_id (will be set by application logic)
-                        None   # category_id (will be set by application logic)
-                    )
-                    transactions.append(transaction)
-                except Exception as e:
-                    print(f"Skipping row due to error: {e}")
-                    print(f"Row data: {row}")
-            
-            # Batch insert
-            with conn.cursor() as cur:
-                execute_values(
-                    cur,
-                    """
-                    INSERT INTO wells_fargo_credit_card_transactions 
-                    (transaction_date, amount, posted_flag, raw_reference, 
-                     raw_merchant, merchant_id, category_id)
-                    VALUES %s
-                    """,
-                    transactions
-                )
-                conn.commit()
-                print(f"\n✓ Successfully imported {len(transactions)} transactions")
-
-        # Delete the CSV file after successful import
-        os.remove(csv_path)
-        print(f"✓ Deleted {csv_path}")
-
-    except Exception as e:
-        conn.rollback()
-        print(f"Error: {e}")
-        raise
-    
-    finally:
-        conn.close()
-
-if __name__ == '__main__':
-    downloads_dir = sys.argv[1] if len(sys.argv) > 1 else '~/Downloads'
-    
-    csv_file = find_csv_file()
-    if csv_file:
-        print(f"Importing from: {csv_file}")
-        import_transactions(csv_file)
-    else:
-        print("No CSV file found")
-```
 ### Code snippet from Agent Smith Flask for reading cc data from postgres ###
 ```python
 import os
