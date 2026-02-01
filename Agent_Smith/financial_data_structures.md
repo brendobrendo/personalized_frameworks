@@ -1,6 +1,11 @@
 # Wells Fargo Credit Card #
 ## CSV structure ##
-{{ Will update this with the CSV structure }}
+```csv
+"01/29/2026","-22.11","*","","OPENAI *CHATGPT SUBSCR OPENAI.COM CA"
+"01/29/2026","-10.48","*","","CHIPOTLE 2575 BELLEVUE WA"
+"01/29/2026","-9.47","*","","MCDONALD'S F10651 BELLEVUE WA"
+"01/28/2026","-9.47","*","","MCDONALD'S F10651 BELLEVUE WA"
+```
 ## Ingestion process ##
 Data ingestion begins by downloading a CSV file of recent Wells Fargo credit card transactions to my local machine. A script then parses this CSV and uploads the records into the Postgres database. Once stored, the data can be accessed by the Flask backend via standard database queries, exposed through API endpoints consumed by the React app, and ultimately made available through MCP tools, including interaction from clients like Claude Code.
 ## Postgres table ##
