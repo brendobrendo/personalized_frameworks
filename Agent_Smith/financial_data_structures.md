@@ -451,18 +451,16 @@ I also think I can take out the 'asterisk_field' and 'blank_field' keys from eac
 ```typescript
 export interface ICreditCardTransaction {
     id: string; // 
-    asterisk_field: string;
-    blank_field: number;
-    credit_card_balance: number | null;
-    my_classification: string | null;
-    my_description: string | null;
-    transaction_amount: number;
+    credit_card_balance: number | null; // Calculation method not implemented yet
+    my_classification: string | null; // Can this map to category_id?
+    my_description: string | null; // Can this map to raw_merchant
+    transaction_amount: number; // Can this map to amount?
     transaction_date: string;
-    transaction_description: string;
-    type_of_transaction: string;
-    merchant: string;
+    transaction_description: string; // Can this map to raw_merchant?
+    type_of_transaction: string; // This will be either CASH_INFLOW or CASH_OUTFLOW based on if amount is negative or positive
+    merchant: string; // Can this be raw_merchant for now?
     other_notes: string | null;
-    receipt: IReceipt | null;
+    receipt: IReceipt | null; // Potentially change this to receipt id. Then can call new api call to get receipt info one at a time in another interface
 }
 ```
 ### Legacy Interface Structure ###
@@ -485,3 +483,10 @@ export interface ICCTransaction {
 ```
 
 # Wells Fargo Checking Account Data Ingestion Process #
+
+# Reconciliation explanation #
+
+Reconciliation SQL refers to a query (or small set of queries) that verifies your statement data is internally consistent by comparing what Wells Fargo says your balances are with what your transaction data mathematically implies they should be—typically:
+starting_balance + sum(posted transactions in the statement window) = ending_balance. In practice, this SQL groups transactions by statement_id (or by transaction_date between start_date and end_date), sums the posted amounts, and then calculates a delta against the stored ending_balance; any non-zero difference flags missing transactions, duplicate imports, incorrect sign conventions, or timing issues (pending vs posted). This is exactly the kind of guardrail you want in Agent Smith to catch ingestion bugs early and keep downstream analytics trustworthy.
+
+On the second point: no—there is not already a trigger that auto-assigns statement_id, because in the earlier steps we only created the wells_fargo_credit_card_statements table (and optionally added a statement_id column to transactions). A trigger would be an additional, explicit database object that fires on INSERT/UPDATE of transactions and assigns the correct statement based on transaction_date (and possibly posted_flag). If you want, the next clean step is to define that trigger so the database—not your Flask code—owns statement assignment logic.
