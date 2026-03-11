@@ -148,7 +148,8 @@ Opening an account or fixing a transaction issue.
 
 ### Psychology
 - Low cognitive load
-- Default mode network activity
+- Default mode network activity - The **Default Mode Network (DMN)** is a network of interconnected brain regions that becomes most active when a person is **not focused on the outside world**—for example during daydreaming, self-reflection, remembering the past, imagining the future, or thinking about other people. Instead of handling immediate tasks, it supports **internal mental activity** such as autobiographical memory, identity, and social reasoning. The DMN is associated with several specific brain regions, especially the **medial prefrontal cortex**, **posterior cingulate cortex/precuneus**, **inferior parietal lobule**, **lateral temporal cortex**, and parts of the **hippocampal formation**. These regions work together as a coordinated system that typically **deactivates when attention-demanding tasks begin** and reactivates when the mind returns to internally focused thought.
+
 
 ### How to Respond
 - Simplify decisions
