@@ -266,3 +266,178 @@ Examples:
 - If someone is in **Task Mode**, emotional persuasion is unnecessary.
 
 Understanding the active mental domain allows you to respond in a way that aligns with the person’s current cognitive state.
+
+# Neural Net Model
+# Human Mental Modes Framework
+
+## 1. Core Idea
+
+The **Human Mental Modes Framework** models the mind as a **hierarchical neural network system**.
+
+At the top of the hierarchy is a large, universal model called the **Consciousness Model**.  
+This model continuously processes sensory input, internal physiological signals, and stored memory in order to determine the **current mental mode** that should guide behavior.
+
+In this framework, **mental modes** function like specialized sub-networks optimized for different kinds of cognitive or behavioral tasks.
+
+Rather than the brain using one general-purpose processing strategy at all times, it dynamically **switches between modes**, each of which prioritizes different signals and behaviors.
+
+---
+
+# 2. The Consciousness Model (Top-Level Controller)
+
+The **Consciousness Model** acts as the system’s primary integrator and decision layer.
+
+It receives multiple streams of input from both the external environment and the body.
+
+### Inputs
+
+#### External Sensory Inputs
+
+- Visual
+- Sound
+- Touch
+- Smell
+- Taste
+
+#### Internal Physiological Inputs
+
+These represent the body’s regulatory state.
+
+- Blood sugar
+- Oxygen levels
+- Hydration
+- Sleep pressure
+- Body temperature
+- Hormonal signals
+- Stress levels
+
+These signals are similar to what neuroscience calls **interoception**.
+
+---
+
+### Internal Components
+
+Inside the Consciousness Model are several memory systems that provide context.
+
+#### 1. Known Facts (Semantic Memory)
+
+Structured knowledge about the world.
+
+Examples:
+
+- language
+- learned concepts
+- historical facts
+- rules
+
+---
+
+#### 2. Working Memory
+
+A temporary buffer that holds information currently being processed.
+
+Examples:
+
+- numbers in a calculation
+- the current conversation
+- the next step in a task
+
+---
+
+#### 3. Sentimental / Emotional Memory
+
+Emotionally weighted memories tied to past experiences.
+
+Examples:
+
+- rewarding events
+- traumatic experiences
+- socially meaningful interactions
+
+These memories influence how the system evaluates new situations.
+
+---
+
+# 3. The Output: Mental Modes
+
+The output of the Consciousness Model is the **selection of a mental mode**.
+
+A **mental mode** represents a coordinated configuration of attention, motivation, and behavior.
+
+Examples include:
+
+- **Reward Mode** — seeking pleasure, novelty, or opportunity
+- **Threat Mode** — fight, flight, or defensive vigilance
+- **Moral Mode** — evaluating fairness, loyalty, authority, and norms
+- **Task Mode** — goal-directed work and problem solving
+- **Social Mode** — interpreting and responding to other people
+- **Rest / Default Mode** — reflection, imagination, or mind wandering
+
+Each mode activates a different pattern of priorities:
+
+- what the brain pays attention to
+- how it interprets signals
+- what actions it prepares
+
+---
+
+# 4. Embedded Neural Networks (Sub-Models)
+
+Each mental mode can be thought of as a **specialized neural network embedded within the larger Consciousness Model**.
+
+For example:
+
+| Mental Mode | Primary Goal | Dominant Processing |
+|-------------|--------------|---------------------|
+| Threat Mode | Survival | Rapid pattern detection |
+| Reward Mode | Opportunity seeking | Novelty and pleasure signals |
+| Task Mode | Goal completion | Planning and working memory |
+| Social Mode | Relationship management | Emotion recognition |
+| Moral Mode | Norm evaluation | Fairness / loyalty judgments |
+
+The Consciousness Model selects which of these sub-networks dominates at any given moment.
+
+This resembles a concept in machine learning called a **Mixture of Experts model**, where a controller network chooses which specialized network should handle the input.
+
+---
+
+# 5. Why This Model Is Useful
+
+The framework helps explain why people behave very differently depending on context.
+
+For example, a customer at a bank might appear:
+
+- **Impatient → Threat Mode**
+- **Curious → Reward Mode**
+- **Analytical → Task Mode**
+- **Offended → Moral Mode**
+
+Recognizing the **active mental mode** can help predict behavior and guide communication.
+
+---
+
+# 6. Conceptual Diagram
+
+```text
+           Sensory Inputs
+  (vision, sound, touch, smell, taste)
+
+           Physiological Inputs
+ (hunger, fatigue, stress, temperature)
+
+                    ↓
+
+           Consciousness Model
+        (controller / integrator layer)
+
+     ┌──────────────┬──────────────┬──────────────┐
+     │              │              │              │
+ Semantic Memory   Working Memory   Emotional Memory
+     │              │              │
+     └──────────────┴──────────────┴──────────────┘
+
+                    ↓
+
+           Mental Mode Selection
+
+   Reward   Threat   Moral   Task   Social   Rest
