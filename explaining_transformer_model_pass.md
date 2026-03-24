@@ -40,7 +40,7 @@ It processes:
 
 > **Dense vector representations of tokens (embeddings)**
 
-```markdown id="transformer-forward-pass"
+markdown id="transformer-forward-pass"
 ## ✅ Forward Pass (Through a Transformer Layer)
 
 - The input tensor is fed into the **first transformer layer**.
@@ -120,5 +120,4 @@ It processes:
 Each layer doesn’t produce tokens — it produces:
 
 > **A refined set of embedding vectors, where each token now “understands” its context relative to all other tokens.**
-```
 
