@@ -3,7 +3,6 @@
 - Input text is entered into a client-facing application (e.g., ChatGPT) or sent via an API.
 
 - The input text is **tokenized into tokens**  
-  *(these are often subwords, not full words).*
 
 - Each token is mapped to a **token ID**, which is used to **look up its embedding vector** from the model’s embedding matrix.
 
@@ -14,22 +13,7 @@
 
 ---
 
-## 🔧 Subtle but Important Clarifications
-
-- **Embedding lookup (not generation):**  
-  Embeddings are retrieved from a **learned matrix**, not generated dynamically.
-
-- **Positional encoding:**  
-  Position information is **added to each token’s embedding vector** before entering the model.
-
-- **Tensor structure:**  
-  The final input to the transformer has shape:
-   *(batch_size, sequence_length, embedding_dim)*
-
-
----
-
-## 🧠 Key Insight
+## 🧠 Key Insights
 
 The transformer does **not** process:
 - raw text  
@@ -40,12 +24,36 @@ It processes:
 
 > **Dense vector representations of tokens (embeddings)**
 
-markdown id="transformer-forward-pass"
+**Tensor structure:**  
+  The final input to the transformer has shape:
+   *(batch_size, sequence_length, embedding_dim)*
+
 ## ✅ Forward Pass (Through a Transformer Layer)
 
 - The input tensor is fed into the **first transformer layer**.
 
 - Each layer takes the **output tensor from the previous layer** and applies a series of transformations.
+
+---
+
+### 🔹 Encoder vs Decoder Layers (Architecture Context)
+
+- Transformer models are built using **encoder layers**, **decoder layers**, or both.
+
+- **Encoder layers:**
+  - Use **full self-attention**
+  - Each token can attend to **all other tokens in the sequence**
+  - Best for **understanding tasks** (classification, embeddings)
+
+- **Decoder layers:**
+  - Use **masked self-attention**
+  - Each token can only attend to **previous tokens (not future ones)**
+  - Enables **autoregressive generation (predicting next token)**
+
+- Model examples:
+  - GPT (Generative Pretrained Transformer) → **decoder-only**
+  - BERT (Bidirectional Encoder Representations from Transformers) → **encoder-only**
+  - Attention Is All You Need (original transformer) → **encoder + decoder**
 
 ---
 
@@ -67,7 +75,9 @@ markdown id="transformer-forward-pass"
   - **Scaled and passed through a softmax** to create attention weights.
 
 - These weights are used to compute a weighted sum of the Value vectors:
-  - This produces a **contextualized representation for each token**.
+  - This produces a **contextualized representation for each token**
+
+> ⚠️ In decoder layers, this attention is **masked** so tokens cannot “see the future”
 
 ---
 
@@ -97,7 +107,7 @@ markdown id="transformer-forward-pass"
 ### 🔁 Layer Stacking
 
 - This entire process repeats across multiple layers.
-- Each layer produces a **more context-aware embedding for every token**.
+- Each layer produces a **more context-aware embedding for every token**
 
 ---
 
@@ -107,8 +117,9 @@ markdown id="transformer-forward-pass"
   - Q and K produce **attention scores**
   - These scores determine how V vectors are combined
 
-- **Each head sees the full sequence:**
-  - Not just one token at a time — attention is computed across all tokens
+- **Each head sees the full sequence (encoder) or past sequence (decoder):**
+  - Encoder → full visibility  
+  - Decoder → masked (left-to-right)
 
 - **Output is still one vector per token:**
   - But now enriched with context from other tokens in the sequence
