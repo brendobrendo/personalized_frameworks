@@ -19,3 +19,10 @@ During a review of their IT systems, leaders realized that every external startu
 ## Official Launch
 
 After releasing early, basic developer tools (like APIs for the Amazon product catalog in 2002), AWS officially launched its modern cloud infrastructure in 2006. The first piece, the Simple Queue Service (SQS), arrived in 2004—but the launch that changed everything came in 2006 with the Simple Storage Service (S3) and Elastic Compute Cloud (EC2). This allowed companies to rent virtual computers and storage on demand, effectively transforming tech from an upfront capital expense into a variable utility.
+
+## Takeaway
+
+Build the tool you need, then notice that everyone else needs it too.
+The deepest lesson of AWS is that Amazon never set out to build the cloud. They set out to solve their own problem—the crushing weight of infrastructure that was slowing their engineers down and that Merchant.com had shown them up close. They solved it because they had to. And only then did they look up and realize the solution itself was the product. The bottleneck was the business.
+For anyone building in the AI era, that flips the most common mistake on its head. A lot of people right now are starting with "I want to build an AI company" and then hunting for a problem to attach it to. AWS teaches the opposite: start with a real, specific, painful problem you understand better than anyone—ideally one you're living yourself—and use AI to solve it relentlessly. If the pain is real and widely shared, the thing you built to escape it may turn out to be worth more than the original business ever was.
+The tools are more accessible than ever, which means the technology itself is no longer the edge. What can't be commoditized is deep, first-hand knowledge of a problem worth solving. Amazon had that knowledge because they felt the pain first. Your advantage will come from the same place.
