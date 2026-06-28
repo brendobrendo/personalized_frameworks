@@ -4,47 +4,37 @@
 
 ## Opening Hook
 
-Imagine it's 1999, and you want to sell something online. Before you make a single dollar, you have to answer one terrifying question: how many customers will show up?
+In 2003, Amazon's executives gathered at Jeff Bezos' house outside Seattle and sat down for an ordinary exercise: list what the company is actually good at. They figured it would take thirty minutes. It didn't—because they stumbled onto something unexpected, and it led to a pitch almost no one in the room believed in. A modest side business, maybe. A rounding error. That pitch became Amazon Web Services, which today earns around $130 billion a year and quietly runs a huge slice of the internet you use every day. So how does an idea nobody believed in become the invisible engine of the modern web? To understand what they found on that list, we have to go back a few years first—to a problem that was tormenting every company on the internet.
 
-Because everything hinges on that guess. You have to buy your servers up front. Guess too low, and the day you finally get popular—the day a news story or a holiday rush sends a flood of people to your site—it crashes, and you lose every one of them. But guess too high, and you've spent a fortune on machines that sit in a back room humming away, mostly idle, quietly burning your cash.
+## The Dot-Com Problem
 
-Every single company that wanted to sell online was trapped between those two walls. Too little, and you miss the moment. Too much, and you bleed money waiting for a moment that may never come. Nobody had solved it. You just guessed, and you hoped.
+Imagine it's 1999, and you want to sell something online. Before you make a single dollar, you face one terrifying question: how many customers will show up? Everything hinges on that guess, because you have to buy your servers up front. Guess too low, and the day you finally get popular, your site crashes and you lose everyone. Guess too high, and you've spent a fortune on machines that sit idle, quietly burning your cash. Every company that wanted to sell online was trapped between those two walls—miss the moment, or bleed money waiting for one that may never come. Nobody had solved it. You just guessed, and you hoped.
 
 ## Amazon's Internal Problem
 
-Now, Amazon was living this problem twice over.
+Now, Amazon was living this problem twice over. The first way is obvious—they were selling books, then everything else, and growing fast. But there's a second story most people don't know: Amazon was also quietly running the online stores for other companies. Through a program called Merchant.com, big retailers like Target and Toys "R" Us handed Amazon their entire e-commerce operation. The customer saw the retailer's brand out front—but behind the curtain, Amazon was running the whole machine.
 
-The first way is obvious—they were selling books, then everything else, and they were growing fast. But there's a second story most people don't know. Amazon was also quietly *running the online stores for other companies.* Through a program called Merchant.com, big-name retailers like Target and Toys "R" Us handed Amazon their entire e-commerce operation. The customer saw the retailer's brand on the front—but behind the curtain, Amazon was building and running the whole machine.
-
-And here's where it got painful. Every one of these partners wanted something a little different. A custom checkout here, a special catalog there. Amazon's engineers found themselves building each storefront by hand, like a custom home, one brick at a time. And they kept noticing the same thing: they were laying the *exact same foundation* over and over. The same storage. The same databases. The same plumbing. Just rebuilt from scratch, every time, for every client. It was slow, it was expensive, and it was maddening.
+And here's where it got painful. Every partner wanted something different—a custom checkout here, a special catalog there—so Amazon's engineers built each storefront by hand, one brick at a time. And they kept laying the exact same foundation over and over. The same storage. The same databases. The same plumbing. Rebuilt from scratch, every time, for every client. It was slow, expensive, and maddening.
 
 ## The Pivot
 
-So Amazon did something clever. They stopped building custom mansions and started making standardized bricks.
+So Amazon did something clever: they stopped building custom mansions and started making standardized bricks. Instead of hand-crafting storage for Target, then again for the next client, they built one storage service—a single, reliable block any team could snap into place. Then they did it for databases. For computing power. For one piece of the plumbing after another.
 
-Instead of one team hand-crafting storage for Target and another team hand-crafting storage for the next client, they built *one* storage service—a single, reliable building block—that any team could just reach for and snap into place. Then they did it for databases. For computing power. For one piece of the plumbing after another.
-
-What started as a fix for their Merchant.com headaches quietly spread to the entire company. Soon every internal team at Amazon was building with these same standardized blocks, and they were moving faster than they ever had.
+What started as a fix for their Merchant.com headaches spread to the whole company. Soon every team was building with these same blocks, moving faster than ever. And here's what matters: along the way, without setting out to, Amazon had become exceptionally good at one thing—building rock-solid infrastructure that could scale to almost any size, on demand. They just hadn't named it yet.
 
 ## The Retreat
 
-And then someone had the thought that changed the world.
+Which brings us back to that house outside Seattle, and that list. As the executives worked through what Amazon was truly good at, they landed on something nobody expected to write down: we are extraordinarily good at running infrastructure. That was the thing that stopped them cold—because once you call infrastructure a core competency, a dangerous question follows. Every startup and every developer on Earth was drowning in the same nightmare they'd already solved. So what if they sold it? What if anyone—a giant corporation or a kid in a dorm room—could rent Amazon's technology on demand, and pay only for what they used?
 
-The story goes that at a leadership retreat in 2003, the team looked at all these internal building blocks they'd created—and realized that *every* startup, *every* developer on Earth was struggling with the same infrastructure nightmare they had just solved. The same guessing game. The same wasted money. So they asked a simple question: what if we sold this? What if anyone—a giant corporation or a college kid in a dorm room—could rent Amazon's technology, on demand, and pay only for what they actually used?
+They'd access it through something called an API. If that sounds technical, here's all it means: an API is just one piece of software making a polite request to another. Think of ordering at a restaurant—you don't go into the kitchen and cook. You hand the waiter your order, and the meal comes back out. The API is that waiter: you ask Amazon's systems for storage or computing power, and it's delivered, no kitchen required.
 
-They'd access it through something called an API. And if that sounds technical, here's all it means: an API is just a way for one piece of software to make a polite request to another. Think of it like ordering at a restaurant. You don't go into the kitchen and cook. You hand the waiter your order, and the meal comes back out. An API is that waiter—you ask Amazon's systems for storage or computing power, and it gets delivered, no kitchen required.
-
-Now—here's my favorite part. Nobody thought this would be a big deal. Internally, it was treated as a nice little side business. A way to squeeze some extra revenue out of infrastructure they'd already built. A rounding error on the bottom line.
-
-They could not have been more wrong.
+And here's my favorite part. Nobody thought this would be a big deal. Internally, it was a nice little side business—a rounding error on the bottom line. They could not have been more wrong.
 
 ## Success and Aftermath
 
-That little side project was Amazon Web Services. And it didn't just succeed—it invented an entire industry.
+Remember that side business nobody believed in? It didn't just succeed—it invented an entire industry. Today AWS pulls in roughly $130 billion a year, commands about a third of the global cloud market—more than Microsoft and Google—and here's the number that tells the real story: it's only about 17% of Amazon's revenue, but around 70% of its profit. The rounding error became the engine of the whole company.
 
-Today, AWS pulls in roughly **$130 billion in annual revenue**, and in just the last quarter of 2025 it grew almost **24% year over year**. It commands about **a third of the entire global cloud market**—more than Microsoft and Google. And here's the number that tells the real story: AWS makes up only about **17% of Amazon's revenue, but generates around 70% of Amazon's profit.** The "side business" became the engine of the entire company.
-
-But the bigger transformation happened *out there*, in the world. That nightmare from 1999—guessing your server capacity, betting the company on a number you couldn't possibly know—AWS made it vanish. Suddenly a teenager with an idea could launch an app to a million users without buying a single machine. Netflix, Airbnb, and countless companies you use every day were built on top of it. AWS turned technology from a massive upfront gamble into something you rent by the sip, like electricity from a wall socket. It quietly became the plumbing of the modern internet.
+But the bigger change happened out there. That nightmare from 1999—betting your company on a number you couldn't possibly know—AWS made it vanish. Suddenly a teenager could launch an app to a million users without buying a single machine. Netflix, Airbnb, and countless companies you use every day were built on top of it. AWS turned technology from a massive upfront gamble into something you rent by the sip, like electricity from a wall socket. It quietly became the plumbing of the modern internet.
 
 ## The Takeaway
 
