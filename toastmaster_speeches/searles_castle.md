@@ -1,7 +1,7 @@
 # The Haunting of Hopkins Hall
 *A Berkshire Halloween Legend*
 
-**October 26, 2026 · Brendan Smith**
+**October 27, 2026 · Brendan Smith**
 
 ## I. The Castle on Main Street
 
@@ -55,9 +55,13 @@ He paused.
 
 When Mr. Albright was a boarding-school student, every boy knew the legend.
 
-At night, Mary wandered the castle in a black Victorian gown, searching for Edward, who escaped through secret passages concealed within the walls.
+At night, Mary's ghost wandered the castle in a black Victorian gown, searching for Edward, who escaped through secret passages concealed within the walls.
 
 Sometimes the students heard footsteps running behind the plaster. Other nights, a woman weeping.
+
+The boys believed Edward had hidden Mary's final will somewhere in those passages. It contained her last wish: that the castle forever bear her family's name.
+
+And until someone living discovered that will and spoke its name aloud, Mary could never leave.
 
 But the strangest part of the legend concerned a train.
 
@@ -75,7 +79,9 @@ Mr. Albright stopped walking.
 
 Mr. Albright was fourteen that year.
 
-One October night, he awoke to the sound of a woman crying.
+It was Halloween night, just before midnight.
+
+He awoke to the sound of a woman crying.
 
 He followed the noise down an empty corridor to the old music room, a room that had been locked for years.
 
@@ -131,7 +137,7 @@ Mr. Albright ran.
 
 ## V. The Last Train
 
-When he returned home, his mother was setting the dining table.
+When he returned home the following morning, his mother was setting the dining table.
 
 She suddenly dropped a plate.
 
@@ -139,33 +145,39 @@ Carved into the polished wood were three words:
 
 **MARY WAS HERE.**
 
-His father sanded away the inscription.
+Mr. Albright stared at the inscription.
 
-But the following morning, the words had returned.
+Perhaps Mary was thanking him.
+
+After eighty years, someone had finally remembered her name.
+
+His father sanded away the words that weekend.
+
+But the following morning, they had returned.
+
+Deeper this time.
+
+His father sanded them away again.
+
+And again, they returned.
+
+Soon the letters were carved so deeply that the table could no longer be repaired.
 
 Only then did Mr. Albright understand.
 
 Mary was no longer confined to the castle.
 
-For eighty years, she had searched its corridors, desperate to reclaim her name.
-
-But when a living boy discovered her will and spoke her name aloud, something changed.
-
-She realized that her legacy could reach far beyond the walls of Hopkins Hall.
-
-And she wanted more.
+And having finally been remembered, she had discovered that being remembered once wasn't enough.
 
 "There's something else you should know," Mr. Albright told me.
 
-"1971 was the year passenger trains stopped coming through Great Barrington."
+"1971 was also the year passenger trains stopped coming through Great Barrington."
 
 The newspapers blamed declining profits.
 
-But Mr. Albright believed Mark Hopkins had simply finished his journey.
+But Mr. Albright believed Mark Hopkins had finally found the man he'd been searching for.
 
-Mary no longer needed him to find Edward.
-
-She had found someone to tell her story.
+And after that Halloween night, the Midnight Engine was never heard again.
 
 ## VI. Mary Was Here
 
@@ -173,21 +185,23 @@ We finished our tour in silence.
 
 As we descended the grand staircase, Mr. Albright stopped beside the banister.
 
-"There's a reason I've kept this story to myself all these years," he said.
+"For fifty-five years, I've kept this story to myself," he whispered.
+
+"Then why tell me now?"
+
+He looked genuinely frightened.
+
+"I don't know."
+
+He stared at the staircase.
 
 "Mary spent eighty years wanting someone to remember her. But once she discovered the pleasure of being remembered, she could never have enough."
 
-He looked at me.
+He turned toward me.
 
 "Every person who hears her story gives her somewhere new to go."
 
-I laughed nervously.
-
-"But you've just told me."
-
-Mr. Albright didn't answer.
-
-He was staring at the banister.
+I looked down at the banister.
 
 At the three words I'd noticed when we arrived.
 
