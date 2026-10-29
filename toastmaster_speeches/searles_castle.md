@@ -1,3 +1,54 @@
+# UPDATED VERSION
+
+The Haunting of Searles Castle
+The afternoon sun was sinking behind the Berkshire hills, casting long, sharp shadows through the imposing, pseudo-medieval stone gates of Searles Castle in Great Barrington, Massachusetts. I stood on the driveway alongside Mr. Abernathy, my retired high school history teacher.
+
+Before he taught me the intricacies of the Gilded Age, Mr. Abernathy had been a student here in the late 1960s, back when the gargantuan French chateau-style mansion functioned as a strict private boarding school.
+
+"Look at the masonry," Mr. Abernathy said, his voice quiet as he adjusted his glasses. "Edward Searles put his own name on everything after Mary died. Local history books still remember her, sure—Mary Hopkins Searles, America's wealthiest widow. But the history books miss the real tragedy of who she was.
+
+Mary had this tragic, agonizing relationship with attention. In life, she desperately craved the spotlight. She loved the ambient chatter of a crowd murmuring about her immense wealth and her grand taste. She was like a child desperate for an audience, practically shouting 'Look at me!' But the moment someone actually did—the moment an onlooker's glance lingered just a second too long, trying to see the actual woman behind the fortune—a profound, suffocating shyness would paralyze her. She would flinch violently, her posture crumpling, and she would snap a heavy, ebony silk fan open to shield her face from the world.
+
+She poured that erratic energy and her massive Central Pacific Railroad fortune into building this castle. She penned numerous intimate letters to Edward, her young architect husband, laying out a singular, passionate decree: the grand property was to be named The Hopkins Estate. A monument to the empire she brought into their marriage. Edward smiled, agreed to her face, and pocketed her money.
+
+But the moment she died, Edward took full control. He ignored her final wishes, christened the property the Searles Estate, and locked her letters away. Her name remained in the dusty ledger books of the town, but the physical legacy she bought and paid for was stolen right out from under her memory. And in the winter of 1970, the estate refused to let us forget it."
+
+"It was my sophomore year," Mr. Abernathy began, leading me down the gravel path toward the grand terrace overlooking the lower fields. "The school had admitted a new kid named Julian. He was a distant, secondary descendant of Edward Searles' family. Unlike the rest of us, Julian was incredibly arrogant, constantly bragging about his lineage and how his family owned the very halls we slept in.
+
+It was late October, right around this time of year. A heavy, freezing fog had rolled off the Housatonic River, thick enough to swallow the lower boundary walls. Julian and I had broken curfew, sneaking out to the terrace to smoke cigarettes we'd smuggled from town. Julian was leaning against the stone balustrade, loudly jeering about how his ancestors ran this town.
+
+Suddenly, the night went dead. The wind dropped. The crickets cut off completely.
+
+Then came the vibration. It wasn't a tremor; it was a rhythmic, heavy chug-chug-chug deep inside the earth. The flagstones beneath our loafers were violently shaking.
+
+Julian laughed, thinking it was the old Berkshire Line train passing by the Castle Street tracks down the road. But the sound wasn't coming from the town. It was coming from the fog right on the estate lawn.
+
+Out of the mist, a deafening, mournful steam whistle blew—a sound so loud it rattled the glass in the castle windows behind us. Through the white fog, we saw the blinding, white-hot glare of a massive locomotive headlight cutting across the terrace grass. There were no tracks out there. Just empty air. Yet the sound of screeching iron wheels and roaring steam was right on top of us.
+
+Julian's arrogance vanished in an instant. He froze, paralyzed by fear. And that's when the steam parted.
+
+She didn't look like a standard ghost. She was tall, regal, wearing a sweeping, ash-black Victorian mourning gown that seemed to float in the freezing air. She glided toward us, her posture proud and desperate, radiating that same childhood need to be noticed. She wanted us to see her grand palace.
+
+Terrified and bewildered, Julian didn't look away—he stared right at her face, trying to discern her features in the dark.
+
+The moment his gaze lingered, the entity changed. The proud posture vanished. She flinched violently, her shoulders crumpling in an agony of sudden shyness. Her right arm snapped up, and with a vicious, loud crack, she unfurled a heavy, ebony silk fan, shielding her face from our eyes.
+
+Behind the fan, where her face should have been, there was only a shifting, blank canvas of uncarved, smooth white marble.
+
+From behind the silk, a voice echoed—half a wealthy matriarch's booming fury, half a weeping child's whimper:
+
+'Why does my castle not bear the name Hopkins?'
+
+The phantom train roared to a deafening, blinding crescendo. Julian screamed, dropping to his knees and covering his ears. I scrambled backward, tripping over a stone balustrade. When I looked up, the steam, the train, and the woman were gone.
+
+Julian was never the same after that night. He lost every ounce of that arrogant spark. He barely spoke a word for the rest of the semester, as if the sheer weight of her stolen legacy had drained a piece of his own mind away. He transferred out by Christmas."
+
+Mr. Abernathy stopped walking, staring out over the empty grass where the phantom train had run.
+
+"You know," he murmured, pointing toward the distant tree line where the old railroad tracks sat silent. "The newspapers and the town records say that regular passenger train service to Great Barrington ended permanently on April 30, 1971, because of economic declines and the national transition to Amtrak."
+
+He offered a grim, knowing smile. "But those of us who were at the castle that winter knew the real reason. The conductors refused to drive the locomotives through the Berkshires anymore. They said that every time they passed the estate at night, an invisible iron train would scream out from the castle gates, trying to force the real engines off the tracks—Mary's empire, forever trying to reclaim the land Edward stole from her."
+
 # The Haunting of Hopkins Hall
 *A Berkshire Halloween Legend*
 
