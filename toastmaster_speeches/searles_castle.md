@@ -1,3 +1,185 @@
+# UPDATED UPDATED VERSION
+
+
+# The Haunting of Searles Castle
+
+The afternoon sun was sinking behind the Berkshire hills, casting long, sharp shadows through the imposing, pseudo-medieval stone gates of **Searles Castle in Great Barrington, Massachusetts.** I stood on the driveway alongside Mr. Abernathy, my retired high school history teacher.
+
+Before he taught me the intricacies of the Gilded Age, Mr. Abernathy had been a student here in the late 1960s, back when the gargantuan French chateau-style mansion functioned as a strict private boarding school.
+
+"Look at the masonry," Mr. Abernathy said, adjusting his glasses. "Edward Searles put his own name on everything after Mary died. But this castle belonged to Mary Hopkins Searles, America's wealthiest widow.
+
+Mary was a curious woman. She delighted in being the talk of the town, but whenever someone's glance lingered too long, she would shield her face with her ebony silk fan. She craved attention, yet couldn't bear to be seen.
+
+She poured her massive Central Pacific Railroad fortune into building this castle, intending it to bear her family name: *The Hopkins Estate.* But after her death, her young husband Edward inherited her fortune and the estate became known by his name.
+
+And that wasn't the end of her humiliation.
+
+Mary had an adopted son, Timothy Hopkins, who challenged Edward's inheritance in a bitter, highly publicized court battle. The trial dragged Mary's private life into the newspapers. Reporters portrayed her as an eccentric elderly widow who had married a man twenty years her junior. They scrutinized her fascination with Spiritualism, including accounts of séances held in her mansion.
+
+Imagine that. A woman who had spent her life surrounding herself with grandeur, desperate to be admired, was now being remembered for the very things she would have preferred to conceal.
+
+Even in death, she couldn't escape the public's gaze.
+
+And in the autumn of 1970, we discovered just how much that mattered."
+
+Mr. Abernathy led me down the gravel path toward the grand terrace overlooking the lower fields.
+
+"It was my sophomore year. The school had admitted a new kid named Julian, a distant descendant of Edward Searles' family. Julian was arrogant, constantly bragging about his lineage and how his family owned the very halls we slept in.
+
+It was late October, right around this time of year. A freezing fog had rolled off the Housatonic River, thick enough to swallow the lower boundary walls. Julian and I had broken curfew, sneaking out to the terrace to smoke cigarettes we'd smuggled from town.
+
+Julian was leaning against the stone balustrade, laughing about how his ancestors had built the finest mansion in the Berkshires.
+
+Suddenly, the night went silent.
+
+The wind stopped. The crickets went quiet.
+
+Then came a vibration.
+
+At first, I thought it was my imagination. But the stone beneath my shoes was trembling. A low, rhythmic *chug-chug-chug* rose from somewhere beyond the terrace.
+
+Julian laughed. 'Relax. It's just the train.'
+
+But I knew the railroad tracks were down in town, nowhere near the castle lawn.
+
+The vibration grew stronger. My cigarette slipped from my fingers. Then a deafening steam whistle tore through the fog, so loud that the windows behind us rattled in their frames.
+
+A brilliant white light appeared in the mist.
+
+It swept across the lawn like the headlight of an approaching locomotive. We heard the screech of iron wheels, the hiss of escaping steam, and the thunder of something enormous bearing down on us.
+
+But there were no tracks. Nothing but grass.
+
+Julian stopped laughing.
+
+The light vanished, and the steam began to part.
+
+A woman stood before us.
+
+She was tall and regal, dressed in a sweeping black Victorian gown. Her pale hands were folded neatly at her waist. She seemed almost pleased to have an audience.
+
+For a moment, neither of us moved.
+
+Then Julian whispered, 'Who are you?'
+
+The woman slowly raised her head.
+
+I recognized her immediately. I'd seen her portrait hanging above the fireplace in the great hall.
+
+It was Mary Hopkins.
+
+Julian took a step forward, squinting into the darkness. He was trying to see her face.
+
+The moment his gaze lingered, her entire body changed.
+
+Her proud shoulders collapsed. She recoiled as though Julian had struck her. With a sharp *CRACK*, an ebony silk fan snapped open before her face.
+
+For a fraction of a second, before the fan covered her completely, I saw what should have been her features.
+
+There were none.
+
+Only a smooth, white emptiness, like a piece of marble that a sculptor had never finished carving.
+
+From behind the fan came a voice, trembling with fury and something that sounded almost like shame.
+
+*'Why does my castle not bear the name Hopkins?'*
+
+Julian stumbled backward.
+
+The ground began shaking again. The whistle screamed through the night, louder than before.
+
+Mary drifted toward Julian, her black gown trailing across the grass without disturbing a single blade.
+
+He fell to his knees, covering his ears.
+
+I grabbed his collar and tried to pull him away, but he wouldn't move. His eyes were fixed on the woman.
+
+'Don't look at her!' I shouted.
+
+I threw myself between them, blocking his view.
+
+For one terrible moment, Mary turned toward me.
+
+Her fan lowered slightly.
+
+I squeezed my eyes shut.
+
+The whistle rose to a deafening crescendo. Hot steam rushed across my face, carrying the smell of coal smoke and burning iron. Something heavy thundered past us, close enough that I felt the wind tear at my clothes.
+
+Then everything stopped.
+
+When I opened my eyes, the lawn was empty.
+
+Julian was lying beside me, trembling uncontrollably.
+
+We never spoke about what happened that night. Julian lost every ounce of his arrogance. He barely said a word for the rest of the semester and transferred out by Christmas.
+
+But I couldn't forget what I'd seen.
+
+For weeks afterward, I avoided the great hall. I couldn't bear to look at Mary's portrait.
+
+And whenever a train passed through Great Barrington at night, I heard that same terrible whistle."
+
+Mr. Abernathy fell silent.
+
+We had reached the terrace. The evening air was growing cold, and the last sunlight had disappeared behind the hills.
+
+"You know," he said, pointing toward the distant tree line, "regular passenger train service to Great Barrington ended on April 30, 1971. That's what the records say."
+
+He stared across the empty lawn.
+
+"After that, I never heard the whistle again."
+
+I looked toward the castle. In the gathering darkness, its windows seemed almost black.
+
+"Do you think Mary finally found peace?" I asked.
+
+Mr. Abernathy didn't answer.
+
+Instead, he reached into his coat pocket and removed a small, yellowed photograph.
+
+It showed two boys standing on this very terrace, sometime in the late 1960s. One was unmistakably Mr. Abernathy. The other, I assumed, was Julian.
+
+Behind them stood a woman in a black Victorian gown.
+
+Her face was concealed by an ebony silk fan.
+
+I stared at the photograph.
+
+"Who took this?"
+
+Mr. Abernathy shook his head.
+
+"I don't know. I found it in my school trunk the morning after Julian left."
+
+I looked closer.
+
+Something about the photograph was wrong.
+
+The woman wasn't standing behind the boys.
+
+She was standing behind the photographer.
+
+I could see her reflected in the glass doors of the terrace.
+
+And her fan was lowered.
+
+I looked up at Mr. Abernathy, but he was no longer looking at the photograph.
+
+He was staring over my shoulder.
+
+His face had gone white.
+
+From somewhere deep within the castle came a faint, unmistakable sound.
+
+*Chug.*
+
+*Chug.*
+
+*Chug.*
+
+
 # UPDATED VERSION
 
 
