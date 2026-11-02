@@ -1,0 +1,96 @@
+# Payments Ecosystem Brief — November 2, 2026
+
+## Macro picture
+
+This week shows payment networks expanding in several directions:
+
+- **Private platforms are becoming payment networks.** Stripe now lets businesses transfer funds directly to other Stripe businesses.
+- **Domestic bank-payment systems are becoming internationally usable.** Malaysian customers can now use their banking apps at foreign Alipay+ QR merchants.
+- **Authentication is moving away from one-time codes.** Visa passkeys have reached a live merchant rollout.
+- **New public infrastructure remains years away.** The ECB has contracted the connectivity layer for a digital-euro pilot, but has not decided to issue a digital euro.
+
+No similarly consequential new FedNow, RTP or ACH deployment was identified this week.
+
+| Area | Development | Status |
+|---|---|---|
+| Payment rails | Stripe launched instant transfers inside its business network | Live |
+| Real-time payments | No major new U.S. rail deployment identified | — |
+| Digital wallets | Malaysian bank apps gained overseas Alipay+ QR acceptance | Live in five markets |
+| Merchant acquiring | Checkout.com began rolling out Visa Payment Passkey | Live, limited rollout |
+| Bank technology | ECB selected digital-euro network providers | Pilot preparation |
+
+## 1. Stripe launched a private B2B payment network
+
+On **October 27**, Stripe introduced **Stripe Pay**, allowing one Stripe business to find another by its Stripe Profile handle and send an instant, fee-free transfer from either the Stripe Dashboard or command-line interface. The initial announcement describes the service as available now.
+
+**How the flow works:** Instead of collecting a supplier’s bank account and routing information, the sender selects its public Stripe handle. Stripe identifies the recipient and processes the transfer between the businesses.
+
+Stripe has not said that the transfer itself travels over RTP, FedNow or another external bank rail. The interpretation that this is an internal balance transfer remains an inference. Funding Stripe and withdrawing money to a bank are separate steps.
+
+**Why it matters:** Stripe already knows its merchants’ identities, bank accounts and payment histories. That lets it create a directory-based network without asking businesses to exchange banking credentials. It resembles a business version of Venmo, accessible through business software and developer tools.
+
+**Retail-banking implication:** Banks may increasingly provide the entry and exit accounts while a payments platform controls the directory, transaction interface and payment data. A business customer could perceive a Stripe-to-Stripe transfer as immediate even if moving the resulting balance into its checking account takes longer. Bankers should distinguish the platform balance from immediately available bank deposits.
+
+**Status:** Available now, according to Stripe’s announcement.
+
+**Sources:** [Stripe announcement on LinkedIn](https://www.linkedin.com/company/stripe/) · [October 27 coverage from PYMNTS](https://www.pymnts.com/news/b2b-payments/2026/stripe-pay-targets-instant-b2b-payments/)
+
+## 2. Malaysian banking apps can now pay foreign QR merchants
+
+On **October 28**, Malaysia’s PayNet activated outbound DuitNow QR connectivity through Alipay+. Customers of Maybank, CIMB and Hong Leong Bank can use their existing mobile-banking apps at participating merchants in China, Hong Kong, South Korea, the Philippines and Laos. Bank Islam is expected to join later.
+
+**How the flow works:**
+
+1. The customer opens DuitNow QR inside the bank’s app.
+2. The customer scans a foreign merchant’s Alipay+ QR code.
+3. PayNet and Alipay+ connect the Malaysian payment service with the merchant’s payment provider.
+4. The customer reviews and confirms the transaction in the familiar banking app.
+
+The customer does not need an Alipay+ account or another wallet. The bank app has effectively become an internationally accepted payment wallet. The announcement does not specify the complete interbank settlement arrangements.
+
+**Why it matters:** This is a live example of interoperability expanding a domestic payment scheme without replacing local bank apps or requiring every bank to integrate separately with every foreign QR system.
+
+**Retail-banking implication:** Banks can retain the customer interface even when an external gateway supplies international acceptance. That preserves opportunities for transaction alerts, travel controls, dispute support and foreign-exchange services. It also complicates servicing: the customer sees the bank’s app, while PayNet, Alipay+ and a foreign payment provider may all participate in the payment.
+
+**Status:** Live through three launch banks at participating merchants in five destinations.
+
+**Source:** [PayNet — Overseas DuitNow QR payments through Alipay+](https://paynet.my/about-us/media-centre/press-release/paynet-enables-malaysian-mobile-banking-app-users-to-make-overseas-duitnow-qr-payments-via-alipayplus.html)
+
+## 3. Visa passkeys reached live merchant checkout
+
+On **October 29**, Checkout.com said it was live with **Visa Payment Passkey**. The phased rollout begins with selected merchants in the UK and Europe; it is not yet broadly available to every Checkout.com merchant.
+
+**How the technology works:** During an online Visa purchase, the customer verifies the payment with the fingerprint, face scan or PIN used to unlock the device. A FIDO cryptographic key confirms possession of the registered device. The private key remains on the device, so there is no SMS code for a criminal to intercept or persuade the customer to disclose.
+
+If passkey authentication is unavailable, the checkout falls back to existing verification methods.
+
+This changes the **cardholder-authentication step**. The payment still uses the Visa card network, and the issuer separately decides whether to authorize it.
+
+**Why it matters:** Merchants can add stronger authentication through Checkout.com’s existing integration rather than rebuilding checkout. The potential benefit is fewer abandoned purchases alongside reduced exposure to stolen one-time codes.
+
+**Retail-banking implication:** Passkeys should reduce reliance on one-time codes, along with associated phishing and SIM-swap risks. Issuers will still make authorization decisions using balance, fraud and account information. Servicing systems should show whether a purchase passed device-based authentication separately from whether the issuer approved the transaction.
+
+**Status:** Live, limited rollout beginning with selected UK and European merchants.
+
+**Sources:**
+
+- [Checkout.com — Visa Payment Passkey rollout](https://www.checkout.com/newsroom/checkout-com-brings-visa-payment-passkey-to-merchants-globally)
+- [Visa — Payment Passkey technical introduction](https://developer.visa.com/docs/visa-payment-passkey)
+- [Visa — How device-based verification works](https://developer.visa.com/docs/visa-payment-passkey/merchants-psps)
+
+## Longer-term watch: the digital euro’s connection layer
+
+On **October 30**, the ECB announced two groups of network-service providers that will connect banks, payment providers and central banks to the proposed digital-euro platform:
+
+- Nexi Payments and Deutsche Telekom Business Solutions.
+- Telefónica de España, Telefónica Global Solutions and Indra.
+
+The first contract is supporting the pilot; the second starts in **May 2027**. Both are expected to be capable of supporting potential issuance from **2029**, subject to a future ECB decision.
+
+These companies would provide secure connectivity, similar to dedicated network access to a payment platform. They would not themselves issue the currency.
+
+**Retail-banking implication:** The announcement makes the technical connection model more concrete for participating institutions, but it does not establish a consumer launch date.
+
+**Status:** Pilot preparation. A retail digital euro is not live or finally approved.
+
+**Source:** [ECB — Network service providers selected for the digital euro](https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews261030.en.html)
