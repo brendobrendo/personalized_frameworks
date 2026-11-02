@@ -1,0 +1,3 @@
+The three most consequential forces shaping the global economy today, particularly the U.S. economy, are **U.S. fiscal policy and government borrowing, the AI capital expenditure boom, and the Federal Reserve’s monetary policy.**
+
+The next three major forces shaping the global economy are **the growing concentration of wealth in the United States, the unpredictability of the Trump administration’s trade and foreign policies, and China’s emergence as a competing global superpower.**
